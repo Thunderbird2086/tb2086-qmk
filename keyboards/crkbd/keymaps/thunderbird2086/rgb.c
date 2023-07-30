@@ -47,7 +47,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color(i, RGB_GREEN);
                 break;
             case _ADJUST:
-                rgb_matrix_set_color(i, RGB_YELLOW);
+                //  rgb_matrix_set_color(i, RGB_YELLOW);
                     //  RGB_WHITE caused crash
                 break;
             default:
