@@ -16,7 +16,8 @@
 #if defined(TAPPING_TERM)
 #   undef TAPPING_TERM
 #endif
-#define TAPPING_TERM 200
+//#define TAPPING_TERM 250    //  white
+#define TAPPING_TERM 220    //  black
 #define VER_NEWLINE_WAIT 200 // in milliseconds
 
 #define NO_ACTION_ONESHOT
