@@ -44,7 +44,7 @@
 #define ________________________SYMBOL_R2________________________ XXXXXXX , KC_LCBR , KC_RCBR , KC_LBRC , KC_RBRC , KC_PLUS
 
 
-#define ________________________ADJUST_L1________________________ RESET   , XXXXXXX , KC_PWR  , KC_WAKE , KC_SLEP , XXXXXXX
+#define ________________________ADJUST_L1________________________ QK_BOOT , XXXXXXX , KC_PWR  , KC_WAKE , KC_SLEP , XXXXXXX
 
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
 #   define ________________________ADJUST_L2________________________ RGBRST  , XXXXXXX , RGB_SPI , RGB_SAI , RGB_HUI , RGB_VAI
@@ -84,8 +84,13 @@
 
 #define _________MOD_LEFT__________ T_GUI   , FCT_DEL , RAI_SPC
 #define _________MOD_RIGHT_________ RAI_ENT , FCT_BSP , KC_ROPT
-#define _______MOD_TRNS_LEFT_______ KC_TRNS , T_ESC   , XXXXXXX
-#define _______MOD_TRNS_RIGHT______ XXXXXXX , T_ESC   , KC_TRNS
+#if defined(APPLE_FN_ENABLE)
+#   define _______MOD_TRNS_LEFT_______ KC_TRNS    , T_ESC      , KC_APPLE_FN
+#   define _______MOD_TRNS_RIGHT______ KC_APPLE_FN, T_ESC      , KC_TRNS
+#else
+#   define _______MOD_TRNS_LEFT_______ KC_TRNS    , T_ESC      , XXXXXXX
+#   define _______MOD_TRNS_RIGHT______ XXXXXXX    , T_ESC      , KC_TRNS
+#endif
 
 // Layout wrappers
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
