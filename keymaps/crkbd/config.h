@@ -42,6 +42,8 @@
 #   undef TAPPING_TERM
 #endif
 #define TAPPING_TERM 200
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define QUICK_TAP_TERM 0
 #define VER_NEWLINE_WAIT 200 // in milliseconds
 
 #define NO_ACTION_ONESHOT
@@ -51,7 +53,6 @@
 #   define SPLIT_LED_STATE_ENABLE
 #   define SPLIT_MODS_ENABLE
 #   define SPLIT_OLED_ENABLE
-#   define OLED_FONT_H "keyboards/crkbd/keymaps/thunderbird2086/glcdfont.c"
 #    undef OLED_TIMEOUT
         //  due to timer_read() for render_prompt(), we have own implementation of oled time out
 #   define OLED_KEY_TIMEOUT 30000
@@ -84,7 +85,7 @@
 #   define RGB_DISABLE_WHEN_USB_SUSPENDED       // turn off effects when suspended
 #   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
         // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
-#    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
+#   define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
 #   define RGB_MATRIX_HUE_STEP 32
 #   define RGB_MATRIX_SAT_STEP 64
 #   define RGB_MATRIX_VAL_STEP 64

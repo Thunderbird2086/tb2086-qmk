@@ -4,126 +4,21 @@
 #include QMK_KEYBOARD_H
 #include "keycodes.h"
 
+#include "tb2086/includes/font_util.h"
 
-// 5x3 Logos
-void render_qmk_logo(void) {
-    static const char PROGMEM font_qmk_logo[16] = {
-        0x80, 0x81, 0x82, 0x83, 0x84,
-        0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
-        0xc0, 0xc1, 0xc2, 0xc3, 0xc4,
-        0
-    };
-    oled_write_P(font_qmk_logo, false);
-};
-
-// 5x2 Keyboard, Controller logos
-void render_kb_split(void) {
-    static const char PROGMEM font_kb_split[11] = {
-        0xb5, 0xb6, 0xb7, 0xb8, 0xb9,
-        0xd5, 0xd6, 0xd7, 0xd8, 0xd9,
-        0
-    };
-    oled_write_P(font_kb_split, false);
-};
-
-// 5x1 Layer indicator
-
-void render_layer(void) {
-    static const char PROGMEM font_layer[4][6] = {
-        {0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0},
-        {0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0},
-        {0xda, 0xdb, 0xdc, 0xdd, 0xde, 0},
-        {0x95, 0x96, 0x97, 0x98, 0x99, 0},
-    };
-
-    uint8_t layer = 0;
-    if (layer_state_is(_FUNCTION)) {
-        layer = 1;
-    } else if (layer_state_is(_CODE)) {
-        layer = 2;
-    } else if (layer_state_is(_ADJUST)) {
-        layer = 3;
-    }
-    oled_write_P(font_layer[layer], false);
-};
-
-
-void render_layers(void) {
-    static const char PROGMEM font_layers[4][16] = {
-        {0x20, 0x85, 0x86, 0x87, 0x20,
-         0x20, 0xa5, 0xa6, 0xa7, 0x20,
-         0x20, 0xc5, 0xc6, 0xc7, 0x20,
-         0},
-        {0x20, 0x88, 0x89, 0x8a, 0x20,
-         0x20, 0xa8, 0xa9, 0xaa, 0x20,
-         0x20, 0xc8, 0xc9, 0xca, 0x20,
-         0},
-        {0x20, 0x8b, 0x8c, 0x8d, 0x20,
-         0x20, 0xab, 0xac, 0xad, 0x20,
-         0x20, 0xcb, 0xcc, 0xcd, 0x20,
-         0},
-        {0x20, 0x8e, 0x8f, 0x90, 0x20,
-         0x20, 0xae, 0xaf, 0xb0, 0x20,
-         0x20, 0xce, 0xcf, 0xd0, 0x20,
-         0},
-    };
-
-    uint8_t layer = 0;
-    if (layer_state_is(_FUNCTION)) {
-        layer = 1;
-    } else if (layer_state_is(_CODE)) {
-        layer = 2;
-    } else if (layer_state_is(_ADJUST)) {
-        layer = 3;
-    }
-    oled_write_P(font_layers[layer], false);
-};
 
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
 
 void render_rgb_status(void) {
-    static const char PROGMEM font_rgb_off[3] = {0xd1, 0xd2, 0};
-    static const char PROGMEM font_rgb_on[3]  = {0xd3, 0xd4, 0};
-    bool rgb_enabled = 
-#    if defined(RGBLIGHT_ENABLE)
-        rgblight_is_enabled();
-#    elif defined(RGB_MATRIX_ENABLE)
-        rgb_matrix_is_enabled();
-#    endif
-
-    oled_write_P(rgb_enabled ? font_rgb_on : font_rgb_off, false);
-};
+    oled_write_P(read_icon_rgb_status(
+#                   if defined(RGBLIGHT_ENABLE)
+                    rgblight_is_enabled()
+#                   elif defined(RGB_MATRIX_ENABLE)
+                    rgb_matrix_is_enabled()
+#                   endif
+                ), false);
+}
 #endif
-
-// 2x1 Ctrl, Alt, Shift, GUI, Caps
-
-void render_mod_ctrl(void) {
-    static const char PROGMEM font_ctrl[3] = {0x91, 0x92, 0};
-    oled_write_P(font_ctrl, false);
-};
-
-void render_mod_alt(void) {
-    static const char PROGMEM font_alt[3] = {0xb1, 0xb2, 0};
-    oled_write_P(font_alt, false);
-};
-
-void render_mod_shift(void) {
-    static const char PROGMEM font_shift[3] = {0xb3, 0xb4, 0};
-    oled_write_P(font_shift, false);
-};
-
-void render_mod_gui(void) {
-    static const char PROGMEM font_gui[3] = {0x93, 0x94, 0};
-    oled_write_P(font_gui, false);
-};
-
-void render_caps_lock(void) {
-    static const char PROGMEM font_caps[3] = {0x9f, 0xbf, 0};
-    oled_write_P(font_caps, false);
-};
-
-
-// 5x2 Mod and feature indicator clusters
 
 void render_mod_status(void) {
 #if defined(NO_ACTION_ONESHOT)
@@ -132,23 +27,38 @@ void render_mod_status(void) {
     uint8_t modifiers = get_mods() | get_oneshot_mods();
 #endif
 
-    (modifiers & MOD_MASK_CTRL) ? render_mod_ctrl() : oled_write_P(PSTR("  "), false);
+    // 2x1 Ctrl, Alt, Shift, GUI, Caps
+    oled_write_P(((modifiers & MOD_MASK_CTRL) ? read_icon_mod_ctrl() : PSTR("  ")), false);
     oled_write_P(PSTR(" "), false);
-    (modifiers & MOD_MASK_SHIFT) ? render_mod_shift() : oled_write_P(PSTR("  "), false);
+    oled_write_P(((modifiers & MOD_MASK_SHIFT) ? read_icon_mod_shift() : PSTR("  ")), false);
 
-    (modifiers & MOD_MASK_ALT) ? render_mod_alt() : oled_write_P(PSTR("  "), false);
+    oled_write_P(((modifiers & MOD_MASK_ALT) ? read_icon_mod_alt() : PSTR("  ")), false);
     oled_write_P(PSTR(" "), false);
-    (modifiers & MOD_MASK_GUI) ? render_mod_gui() : oled_write_P(PSTR("  "), false);
+    oled_write_P(((modifiers & MOD_MASK_GUI) ? read_icon_mod_gui() : PSTR("  ")), false);
 
-    led_t led_state = host_keyboard_led_state(); 
-    (led_state.caps_lock) ? render_caps_lock() : oled_write_P(PSTR("  "), false);
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P((led_state.caps_lock ? read_icon_caps_lock() : PSTR("  ")), false);
 }
 
 void render_feature_status(void) {
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
     render_rgb_status();
 #endif
-};
+}
+
+
+void render_layer(bool is_one_line) {
+    uint8_t layer = 0;
+    if (layer_state_is(_FUNCTION)) {
+        layer = 1;
+    } else if (layer_state_is(_CODE)) {
+        layer = 2;
+    } else if (layer_state_is(_ADJUST)) {
+        layer = 3;
+    }
+    oled_write_P(read_layer(layer, is_one_line), false);
+}
+
 
 // Keylogger
 #define KEYLOGGER_LENGTH 5
@@ -228,20 +138,21 @@ void render_prompt(void) {
     } else {
         oled_write_ln_P(blink ? PSTR("> _  ") : PSTR(">    "), false);
     }
-};
+}
 
 
 void render_status_secondary(void) {
     oled_write_ln("", false);
     oled_write_ln("", false);
 
-    render_kb_split();
+    // 5x2 Keyboard, Controller logos
+    oled_write_P(read_font_kb_split(), false);
 
     oled_write_ln("", false);
     oled_write_ln("", false);
     oled_write_ln("", false);
 
-    render_layer();
+    render_layer(true);
 
     oled_write_ln("", false);
     oled_write_ln("", false);
@@ -252,19 +163,20 @@ void render_status_secondary(void) {
 #else
     render_mod_status();
 #endif
-};
+}
 
 
 void render_status_main(void) {
     oled_write_ln("", false);
     oled_write_ln("", false);
 
-    render_qmk_logo();
+    // 5x3 Logos
+    oled_write_P(read_font_qmk_logo(), false);
 
     oled_write_ln("", false);
     oled_write_ln("", false);
 
-    render_layers();
+    render_layer(false);
 
     oled_write_ln("", false);
     oled_write_ln("", false);
