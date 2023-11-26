@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-#include "thunderbird2086/includes/keycodes.h"
+#include "includes/keycodes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
@@ -18,18 +18,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_COLEMAK] = LAYOUT_split_3x5_3(
-        KC_Q,     KC_W,     KC_F,     KC_P,     KC_B,                                KC_J,     KC_L,     KC_U,     KC_Y,     KC_QUOT,
-        LOPT_A,   SFT_R,    CTL_S,    M_LCMD_T, KC_G,                                KC_M,     RCMD_N,   CTL_E,    SFT_I,    ROPT_O,
-        KC_Z,     KC_X,     KC_C,     KC_D,     KC_V,                                KC_K,     KC_H,     KC_COMM,  KC_DOT,   KC_SLSH,
-                                      NAV_ESC,  FCT_TAB,  COD_SPC,         COD_ENT,  FCT_BSPC, MED_DEL
+        KC_Q,      KC_W,      KC_F,      KC_P,      KC_B,                                 KC_J,      KC_L,      KC_U,      KC_Y,      KC_QUOT,
+        LOPT_A,    LSFT_R,    LCTL_S,    M_LCMD_T,  KC_G,                                 KC_M,      RCMD_N,    RCTL_E,    RSFT_I,    ROPT_O,
+        KC_Z,      KC_X,      KC_C,      KC_D,      KC_V,                                 KC_K,      KC_H,      KC_COMM,   KC_DOT,    KC_SLSH,
+                                         NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
       * │ 1 │ 2 │ 3 │ 4 │ 5 │       │ 6 │ 7 │ 8 │ 9 │ 0 │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │ ` │SFT│CTL│OPT│   │       │   │   │ ; │ - │ \ │
+      * │ ` │SFT│CTL│OPT│   │       │   │   │ ; │ - │ = │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │       │   │   │ [ │ ] │ = │
+      * │   │   │   │   │CAP│       │   │   │ [ │ ] │ \ │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *           ┌───┐                   ┌───┐
       *           │ESC├───┐           ┌───┤Del│
@@ -38,10 +38,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_CODE] = LAYOUT_split_3x5_3(
-        KC_1,     KC_2,     KC_3,     KC_4,     KC_5,                                KC_6,     KC_7,     KC_8,     KC_9,     KC_0,
-        LOPT_GRV, KC_LSFT,  KC_LCTL,  KC_LCMD,  KC_NO,                               KC_NO,    KC_RCMD,  CTL_SCLN, SFT_MINS, ROPT_BSLS,
-        KC_NO,    KC_N,     KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_LBRC,  KC_RBRC,  KC_EQL,
-                                      NAV_ESC,  FCT_TAB,  COD_SPC,         COD_ENT,  FCT_BSPC, MED_DEL
+        KC_1,      KC_2,      KC_3,      KC_4,      KC_5,                                 KC_6,      KC_7,      KC_8,      KC_9,      KC_0,
+        LOPT_GRV,  KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_NO,     KC_RCMD,   RCTL_SCLN, RSFT_MINS, ROPT_EQL,
+        KC_NO,     KC_N,      KC_NO,     KC_NO,     KC_CAPS,                              KC_NO,     KC_NO,     KC_LBRC,   KC_RBRC,   KC_BSLS,
+                                         NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │OPT│SFT│CTL│CMD│F12│       │F11│CMD│CTL│SFT│OPT│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │   │   │   │   │   │       │   │   │   │   │   │
+      * │   │   │   │   │CAP│       │   │   │   │   │   │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *           ┌───┐                   ┌───┐
       *           │ESC├───┐           ┌───┤Del│
@@ -58,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_FUNCTION] = LAYOUT_split_3x5_3(
-        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,                               KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,
-        KC_LOPT,  KC_LSFT,  KC_LCTL,  KC_LCMD,  KC_F12,                              KC_F11,   KC_RCMD,  KC_RCTL,  KC_RSFT,  KC_ROPT,
-        KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   
-                                      NAV_ESC,  FCT_TAB,  COD_SPC,         COD_ENT,  FCT_BSPC, MED_DEL
+        KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,                                KC_F6,     KC_F7,     KC_F8,     KC_F9,     KC_F10,
+        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_F12,                               KC_F11,    KC_RCMD,   KC_RCTL,   KC_RSFT,   KC_ROPT,
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_CAPS,                              KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,    
+                                         NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -78,10 +78,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_NAV] = LAYOUT_split_3x5_3(
-        KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  
-        KC_LOPT,  KC_LSFT,  KC_LCTL,  KC_LCMD,  KC_NO,                               KC_PGUP,  KC_LEFT,  KC_UP,    KC_RGHT,  KC_NO,  
-        KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_PGDN,  KC_HOME,  KC_DOWN,  KC_END,   KC_INS,
-                                      NAV_ESC,  FCT_TAB,  COD_SPC,         COD_ENT,  FCT_BSPC, MED_DEL
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,   
+        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_PGUP,   KC_LEFT,   KC_UP,     KC_RGHT,   KC_NO,   
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_PGDN,   KC_HOME,   KC_DOWN,   KC_END,    KC_INS,
+                                         NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -98,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_MEDIA] = LAYOUT_split_3x5_3(
-        KC_PWR,   KC_SLEP,  KC_WAKE,  KC_NO,    KC_NO,                               RGB_TOG,  RGB_MOD,  K_LOCK,   EE_CLR,   QK_BOOT,
-        KC_BRIU,  KC_MPRV,  KC_MPLY,  KC_VOLU,  K_BACK,                              KC_NO,    RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,
-        KC_BRID,  KC_MNXT,  KC_MUTE,  KC_VOLD,  K_FWRD,                              KC_NO,    RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,
-                                      NAV_ESC,  FCT_TAB,  COD_SPC,         COD_ENT,  FCT_BSPC, MED_DEL
+        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    QK_BOOT,
+        KC_BRIU,   KC_MPRV,   KC_MPLY,   KC_VOLU,   K_BACK,                               KC_NO,     RGB_VAI,   RGB_HUI,   RGB_SAI,   RGB_SPI,
+        KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               KC_NO,     RGB_VAD,   RGB_HUD,   RGB_SAD,   RGB_SPD,
+                                         NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     )
 };

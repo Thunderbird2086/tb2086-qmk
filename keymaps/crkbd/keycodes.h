@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
+#include "includes/keycodes.h"
 
 enum custom_keycodes {
     // Layer Macros
@@ -36,13 +37,6 @@ enum layers {
 #endif
 };
 
-// Shortcut Keys
-#define K_BACK      LGUI(KC_LBRC)           // browser back
-#define K_FWRD      LGUI(KC_RBRC)           // browser forward
-#define K_LOCK      LGUI(LCTL(KC_Q))        // Lock screen
-#define K_CSCN      LGUI(LCTL(LSFT(KC_4)))  // Copy a portion of the screen to the clipboard
-#define K_MDSH      LSFT(LALT(KC_MINS))
-
 // Layer Keys
 #define FCT_BSP     LT(_FUNCTION, KC_BSPC)
 #define FCT_DEL     LT(_FUNCTION, KC_DEL)
@@ -60,17 +54,3 @@ enum layers {
 
 #define ADJ_EQL     LT(_ADJUST, KC_EQL)
 #define ADJ_GRV     LT(_ADJUST, KC_GRV)
-
-// Mod-Tap Keys
-#define SFT_SLSH    MT(MOD_RSFT, KC_SLSH)
-#define SFT_Z       MT(MOD_LSFT, KC_Z)
-
-#define CTL_QUOT    MT(MOD_RCTL, KC_QUOT)
-#define CTL_SCLN    MT(MOD_RCTL, KC_SCLN)
-#define CTL_A       MT(MOD_LCTL, KC_A)
-#define CTL_O       MT(MOD_LCTL, KC_O)
-
-#define M_LOPT_F    MT(MOD_LALT, KC_F)
-#define M_LOPT_T    MT(MOD_LALT, KC_T)
-#define RCMD_J      MT(MOD_LGUI, KC_J)
-#define RCMD_N      MT(MOD_RGUI, KC_N)

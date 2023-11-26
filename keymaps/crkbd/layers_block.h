@@ -8,28 +8,20 @@
 
 // Layout blocks
 #define ___________________COLEMAK_DH_L1_______________ KC_Q    , KC_W    , KC_F    , KC_P    , KC_B
-#define ___________________COLEMAK_DH_L2_______________ CTL_A   , KC_R    , KC_S    , M_LOPT_T, KC_G
-#define ___________________COLEMAK_DH_L3_______________ SFT_Z   , KC_X    , KC_C    , KC_D    , KC_V
+#define ___________________COLEMAK_DH_L2_______________ LCTL_A  , KC_R    , KC_S    , M_LOPT_T, KC_G
+#define ___________________COLEMAK_DH_L3_______________ LSFT_Z  , KC_X    , KC_C    , KC_D    , KC_V
                                       
 #define ___________________COLEMAK_DH_R1_______________ KC_J    , KC_L    , KC_U    , KC_Y    , KC_SCLN 
-#define ___________________COLEMAK_DH_R2_______________ KC_M    , RCMD_N  , KC_E    , KC_I    , CTL_O   
-#define ___________________COLEMAK_DH_R3_______________ KC_K    , KC_H    , KC_COMM , KC_DOT  , SFT_SLSH
+#define ___________________COLEMAK_DH_R2_______________ KC_M    , RCMD_N  , KC_E    , KC_I    , RCTL_O   
+#define ___________________COLEMAK_DH_R3_______________ KC_K    , KC_H    , KC_COMM , KC_DOT  , RSFT_SLSH
 
 #define ___________________QWERTY_L1___________________ KC_Q    , KC_W    , KC_E    , KC_R    , KC_T
-#define ___________________QWERTY_L2___________________ CTL_A   , KC_S    , KC_D    , M_LOPT_F, KC_G
-#define ___________________QWERTY_L3___________________ SFT_Z   , KC_X    , KC_C    , KC_V    , KC_B
+#define ___________________QWERTY_L2___________________ LCTL_A  , KC_S    , KC_D    , LOPT_F  , KC_G
+#define ___________________QWERTY_L3___________________ LSFT_Z  , KC_X    , KC_C    , KC_V    , KC_B
 
 #define ___________________QWERTY_R1___________________ KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    
-#define ___________________QWERTY_R2___________________ KC_H    , RCMD_J  , KC_K    , KC_L    , CTL_SCLN
-#define ___________________QWERTY_R3___________________ KC_N    , KC_M    , KC_COMM , KC_DOT  , SFT_SLSH
-
-#define ___________________COLEMAK_L1__________________ KC_Q    , KC_W    , KC_F    , KC_P    , KC_G
-#define ___________________COLEMAK_L2__________________ CTL_A   , KC_R    , KC_S    , M_LOPT_T, KC_D
-#define ___________________COLEMAK_L3__________________ SFT_Z   , KC_X    , KC_C    , KC_V    , KC_B
-
-#define ___________________COLEMAK_R1__________________ KC_J    , KC_L    , KC_U    , KC_Y    , KC_SCLN 
-#define ___________________COLEMAK_R2__________________ KC_H    , RCMD_N  , KC_E    , KC_I    , CTL_O   
-#define ___________________COLEMAK_R3__________________ KC_K    , KC_M    , KC_COMM , KC_DOT  , SFT_SLSH
+#define ___________________QWERTY_R2___________________ KC_H    , RCMD_J  , KC_K    , KC_L    , RCTL_SCLN
+#define ___________________QWERTY_R3___________________ KC_N    , KC_M    , KC_COMM , KC_DOT  , RSFT_SLSH
 
 #define ___________________NUM_LEFT____________________ KC_1    , KC_2    , KC_3    , KC_4    , KC_5
 #define ___________________NUM_RIGHT___________________ KC_6    , KC_7    , KC_8    , KC_9    , KC_0

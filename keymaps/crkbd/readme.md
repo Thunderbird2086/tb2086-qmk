@@ -55,7 +55,7 @@ The concept is Mac and **pinky** friendly keymap.
     | ESC         | Caps lock             |                  |
 
 - ADJUST: RGB control, Power control, default layer setting, QMK version and reset
-  ![adjust](https://i.imgur.com/uDIhigd.png)
+  ![adjust](https://i.imgur.com/T5yaCMq.png)
 
 - SECRET: hold `ADJUST` and `FUNCTION` to activate<br>
   To enable secret macros, create `secrets.h` as shown below.
@@ -68,9 +68,3 @@ The concept is Mac and **pinky** friendly keymap.
       "YOUR_SECRET_5"
   };
   ```
-
-## Custom OLED
-This keymap includes custom OLED font and code. The font contains some logos and status indidcators from [gotham](../gotham) and [soundmonster](../soundmonster) including my own CAPS LOCK icon.  Enable OLED in rukes.mk to check it out. Feel free to reuse the font or parts of it.
-
-## Flashing
-Flash using `make crkbd:thunderbird2086:avrdude` for Pro Micro and `make crkbd:thunderbird2086:dfu` for Elite-C.

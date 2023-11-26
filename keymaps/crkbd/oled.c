@@ -4,60 +4,7 @@
 #include QMK_KEYBOARD_H
 #include "keycodes.h"
 
-#include "tb2086/includes/font_util.h"
-
-
-#if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-
-void render_rgb_status(void) {
-    oled_write_P(read_icon_rgb_status(
-#                   if defined(RGBLIGHT_ENABLE)
-                    rgblight_is_enabled()
-#                   elif defined(RGB_MATRIX_ENABLE)
-                    rgb_matrix_is_enabled()
-#                   endif
-                ), false);
-}
-#endif
-
-void render_mod_status(void) {
-#if defined(NO_ACTION_ONESHOT)
-    uint8_t modifiers = get_mods();
-#else
-    uint8_t modifiers = get_mods() | get_oneshot_mods();
-#endif
-
-    // 2x1 Ctrl, Alt, Shift, GUI, Caps
-    oled_write_P(((modifiers & MOD_MASK_CTRL) ? read_icon_mod_ctrl() : PSTR("  ")), false);
-    oled_write_P(PSTR(" "), false);
-    oled_write_P(((modifiers & MOD_MASK_SHIFT) ? read_icon_mod_shift() : PSTR("  ")), false);
-
-    oled_write_P(((modifiers & MOD_MASK_ALT) ? read_icon_mod_alt() : PSTR("  ")), false);
-    oled_write_P(PSTR(" "), false);
-    oled_write_P(((modifiers & MOD_MASK_GUI) ? read_icon_mod_gui() : PSTR("  ")), false);
-
-    led_t led_state = host_keyboard_led_state();
-    oled_write_P((led_state.caps_lock ? read_icon_caps_lock() : PSTR("  ")), false);
-}
-
-void render_feature_status(void) {
-#if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-    render_rgb_status();
-#endif
-}
-
-
-void render_layer(bool is_one_line) {
-    uint8_t layer = 0;
-    if (layer_state_is(_FUNCTION)) {
-        layer = 1;
-    } else if (layer_state_is(_CODE)) {
-        layer = 2;
-    } else if (layer_state_is(_ADJUST)) {
-        layer = 3;
-    }
-    oled_write_P(read_layer(layer, is_one_line), false);
-}
+#include "includes/font_util.h"
 
 
 // Keylogger
@@ -105,11 +52,22 @@ void add_keylog(uint16_t keycode) {
 }
 #endif
 
-static uint16_t key_timer  = 0;
+
+void render_keylogger_status(void) {
+    oled_write(keylog_str, false);
+}
+
+
+bool is_feature_layer(void) {
+    return layer_state_is(_ADJUST);
+}
+
+
+static uint32_t key_timer  = 0;
 static bool is_key_processed = true;
 bool process_record_oled(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
-        key_timer = timer_read();
+        key_timer = timer_read32();
         is_key_processed = true;
 
 #       if defined(KEY_LOG_ENABLE)
@@ -121,90 +79,30 @@ bool process_record_oled(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-void render_keylogger_status(void) {
-    oled_write(keylog_str, false);
+bool should_oled_off(void) {
+    if (is_key_processed && (timer_elapsed32(key_timer) < OLED_TIMEOUT)) {
+        return false;
+    }
+
+    if (is_key_processed) {
+        oled_off();
+        is_key_processed = false;
+    }
+
+    return true;
 }
 
 
 void render_prompt(void) {
-    bool blink = (timer_read() % 1000) < 500;
+    bool blink = (timer_read32() % 1000) < 500;
 
     if (layer_state_is(_FUNCTION)) {
         oled_write_ln_P(blink ? PSTR("> ft_") : PSTR("> ft "), false);
     } else if (layer_state_is(_CODE)) {
-        oled_write_ln_P(blink ? PSTR("> sy_") : PSTR("> sy "), false);
+        oled_write_ln_P(blink ? PSTR("> co_") : PSTR("> c "), false);
     } else if (layer_state_is(_ADJUST)) {
         oled_write_ln_P(blink ? PSTR("> aj_") : PSTR("> aj "), false);
     } else {
         oled_write_ln_P(blink ? PSTR("> _  ") : PSTR(">    "), false);
     }
-}
-
-
-void render_status_secondary(void) {
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-    // 5x2 Keyboard, Controller logos
-    oled_write_P(read_font_kb_split(), false);
-
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-    render_layer(true);
-
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-#if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-    layer_state_is(_ADJUST) ? render_feature_status() : render_mod_status();
-#else
-    render_mod_status();
-#endif
-}
-
-
-void render_status_main(void) {
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-    // 5x3 Logos
-    oled_write_P(read_font_qmk_logo(), false);
-
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-    render_layer(false);
-
-    oled_write_ln("", false);
-    oled_write_ln("", false);
-
-    render_prompt();
-
-    oled_write_ln("", false);
-
-    render_keylogger_status();
-}
-
-
-oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    return OLED_ROTATION_270;
-}
-
-
-bool oled_task_user(void) {
-    if (is_keyboard_master()) {
-        if (is_key_processed && (timer_elapsed(key_timer) < OLED_KEY_TIMEOUT)) {
-            render_status_main();
-        } else if (is_key_processed) {
-            is_key_processed = false;
-            oled_off();
-        }
-    } else {
-        render_status_secondary();
-    }
-
-    return false;
 }
