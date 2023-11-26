@@ -10,7 +10,13 @@ TAP_DANCE_ENABLE = yes
 
 APPLE_FN_ENABLE = yes
 
-SRC += oled.c
+ifeq ($(strip $(OLED_ENABLE)), yes)
+	SRC += ./lib/layer_state_reader.c
+	SRC += ./lib/logo_reader.c
+	SRC += ./lib/mode_icon_reader.c
+	SRC += oled.c
+endif
+
 SRC += process_records.c
 SRC += rgb.c
 SRC += tap_dances.c

@@ -1,0 +1,19 @@
+{
+    "rgblight": {
+        "animations" : {
+            "breathing": true,
+            "rainbow_mood": true,
+            "snake": false
+           }
+    },
+    "rgb_matrix": {
+        "animations" : {
+            "alpha_mods": true,
+            "breathing": true,
+            "cycle_left_right": false,
+            "rainbow_moving_chevron": true,
+            "rainbow_beacon": true,
+            "pixel_flow": true
+        }
+    }
+}
