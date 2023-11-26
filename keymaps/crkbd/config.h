@@ -53,9 +53,7 @@
 #   define SPLIT_LED_STATE_ENABLE
 #   define SPLIT_MODS_ENABLE
 #   define SPLIT_OLED_ENABLE
-#    undef OLED_TIMEOUT
         //  due to timer_read() for render_prompt(), we have own implementation of oled time out
-#   define OLED_KEY_TIMEOUT 30000
 #   define KEY_LOG_ENABLE
 #endif
 
