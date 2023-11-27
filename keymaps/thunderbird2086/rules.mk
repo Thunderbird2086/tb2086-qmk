@@ -21,6 +21,6 @@ SRC += process_records.c
 SRC += rgb.c
 SRC += tap_dances.c
 
-ifneq ("$(wildcard keyboards/crkbd/keymaps/thunderbird2086/secrets.h)","")
+ifneq ("$(wildcard keyboards/unicorne/keymaps/thunderbird2086/secrets.h)","")
 	OPT_DEFS += -DSECRETS_ENABLE
 endif
