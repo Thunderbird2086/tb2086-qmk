@@ -1,7 +1,7 @@
 {
-    "keyboard_name": "thunderbird2086",
+    "keyboard_name": "unicorne",
     "manufacturer": "Thunderbird2086",
-    "maintainer": "Thunderbird2086",
+    "maintainer": "Allen Choi",
     "bootloader": "atmel-dfu",
     "diode_direction": "COL2ROW",
     "features": {

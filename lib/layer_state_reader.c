@@ -1,3 +1,6 @@
+// Copyright 2021 Allen Choi (@thunderbird2086)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #include "quantum.h"
 
 static const char *read_layer_5x1(int layer) {
