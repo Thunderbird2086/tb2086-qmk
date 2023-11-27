@@ -44,6 +44,6 @@
 
 #ifdef OLED_ENABLE
     #ifndef OLED_FONT_H
-        #define OLED_FONT_H "keyboards/tb2086/lib/glcdfont.c"
+        #define OLED_FONT_H "./lib/glcdfont.c"
     #endif
 #endif
