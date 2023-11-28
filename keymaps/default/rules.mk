@@ -1,5 +1,5 @@
 RGB_MATRIX_ENABLE = yes
-OLED_ENABLE = no
+OLED_ENABLE = yes
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += ./lib/layer_state_reader.c
