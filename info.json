@@ -2,7 +2,7 @@
     "keyboard_name": "unicorne",
     "manufacturer": "Thunderbird2086",
     "maintainer": "Allen Choi",
-    "bootloader": "atmel-dfu",
+    "bootloader": "caterina",
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
