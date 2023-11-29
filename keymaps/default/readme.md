@@ -15,16 +15,19 @@ The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to 
 
 ## Layers
 - Colemak-DH: base layer.
-  ![colemak-dh](https://i.imgur.com/YfQdPAl.png)
+  ![colemak-dh](https://i.imgur.com/8QfJT6e.png)
 
 - CODE: numbers and symbols.  
-  ![symbol](https://i.imgur.com/ZhihCGL.png)
+  ![symbol](https://i.imgur.com/X2zh6rS.png)
 
 - FUNCTION: function keys 
-  ![function](https://i.imgur.com/xNdXYRV.png)
+  ![function](https://i.imgur.com/sTzqbvF.png)
 
 - NAVIGATION: navigation keys 
-  ![navigation](https://i.imgur.com/XRelwQ4.png)
+  ![navigation](https://i.imgur.com/WGBksqF.png)
 
 - MEDEA: Media, Power control, RGB control, and reset
-  ![media](https://i.imgur.com/H1AwAOD.png)
+  ![media](https://i.imgur.com/TEk69Nl.png)
+
+- Mouse: mouse keys
+  ![mouse](https://i.imgur.com/YOK9fvd.png)

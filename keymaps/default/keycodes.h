@@ -14,6 +14,7 @@ enum custom_keycodes {
     FUNCTION,
     NAV,
     MEDIA,
+    MOUSE,
 #   if defined(RGBLIGHT_ENABLE) || defined(RGB_MATRIX_ENABLE)
     RGBRST,
 #   endif
@@ -38,6 +39,7 @@ enum layers {
     _FUNCTION,
     _NAV,
     _MEDIA,
+    _MOUSE,
 #if defined(SECRETS_ENABLE)
     _SECRET,
 #endif
@@ -54,3 +56,4 @@ enum layers {
 #define NAV_ESC     LT(_NAV     , KC_ESC)
 #define MED_DEL     LT(_MEDIA   , KC_DEL)
 
+#define MOU_ESC     LT(_MOUSE   , KC_ESC)
