@@ -59,7 +59,9 @@
 #   define SPLIT_OLED_ENABLE
 #endif
 
-
+#if defined(MOUSE_ENABLE)
+#   define MK_KINETIC_SPEED
+#endif
 
 #if defined(RGB_MATRIX_ENABLE)
 #    undef RGB_DISABLE_WHEN_USB_SUSPENDED       // turn off effects when suspended
