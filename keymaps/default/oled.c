@@ -5,6 +5,7 @@
 #include "keycodes.h"
 
 #include "includes/font_util.h"
+#include "includes/keylogger.h"
 
 bool is_feature_layer(void) {
     return layer_state_is(_MEDIA) || layer_state_is(_NAV);
@@ -17,6 +18,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         key_timer = timer_read32();
         is_key_processed = true;
+
+        set_keylog(keycode, record);
     }
 
     return true;
@@ -51,4 +54,8 @@ void render_prompt(void) {
     } else {
         oled_write_ln_P(blink ? PSTR("> _  ") : PSTR(">    "), false);
     }
+}
+
+void render_keylogger_status(void) {
+    oled_write(read_keylogs(), false); 
 }
