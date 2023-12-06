@@ -21,7 +21,7 @@
     "url": "",
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x0000",
+        "pid": "0x2086",
         "vid": "0xFEED"
     }, 
     "rgb_matrix": {
