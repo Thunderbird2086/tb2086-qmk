@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "quantum.h"
 
-static char keylogs_str[6] = {"\n"};
+static char keylogs_str[5] = {"\n"};
 
 const char code_to_name[60] = {
     ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
@@ -12,7 +12,7 @@ const char code_to_name[60] = {
     'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
     'R', 'E', 'B', 'T', ' ', '-', '=', '[', ']', '\\',
-    '#', ';', '\'', '`', ',', '.', '/', ' ', ' ', ' '};
+    '#', ';', '\'', '`', ',', '.', '/', 'C', ' ', ' '};
 
 void set_keylog(uint16_t keycode, keyrecord_t *record) {
     if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX)
