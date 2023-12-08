@@ -10,16 +10,16 @@
 #define ___________________COLEMAK_DH_L1_______________ KC_Q    , KC_W    , KC_F    , KC_P    , KC_B
 #define ___________________COLEMAK_DH_L2_______________ LCTL_A  , KC_R    , KC_S    , M_LOPT_T, KC_G
 #define ___________________COLEMAK_DH_L3_______________ LSFT_Z  , KC_X    , KC_C    , KC_D    , KC_V
-                                      
-#define ___________________COLEMAK_DH_R1_______________ KC_J    , KC_L    , KC_U    , KC_Y    , KC_SCLN 
-#define ___________________COLEMAK_DH_R2_______________ KC_M    , RCMD_N  , KC_E    , KC_I    , RCTL_O   
+
+#define ___________________COLEMAK_DH_R1_______________ KC_J    , KC_L    , KC_U    , KC_Y    , KC_SCLN
+#define ___________________COLEMAK_DH_R2_______________ KC_M    , RCMD_N  , KC_E    , KC_I    , RCTL_O
 #define ___________________COLEMAK_DH_R3_______________ KC_K    , KC_H    , KC_COMM , KC_DOT  , RSFT_SLSH
 
 #define ___________________QWERTY_L1___________________ KC_Q    , KC_W    , KC_E    , KC_R    , KC_T
 #define ___________________QWERTY_L2___________________ LCTL_A  , KC_S    , KC_D    , LOPT_F  , KC_G
 #define ___________________QWERTY_L3___________________ LSFT_Z  , KC_X    , KC_C    , KC_V    , KC_B
 
-#define ___________________QWERTY_R1___________________ KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    
+#define ___________________QWERTY_R1___________________ KC_Y    , KC_U    , KC_I    , KC_O    , KC_P
 #define ___________________QWERTY_R2___________________ KC_H    , RCMD_J  , KC_K    , KC_L    , RCTL_SCLN
 #define ___________________QWERTY_R3___________________ KC_N    , KC_M    , KC_COMM , KC_DOT  , RSFT_SLSH
 
@@ -41,7 +41,7 @@
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
 #   define ________________________ADJUST_L2________________________ RGBRST  , XXXXXXX , RGB_SPI , RGB_SAI , RGB_HUI , RGB_VAI
 #   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , RGB_SPD , RGB_SAD , RGB_HUD , RGB_VAD
-#else                                                                                                                
+#else
 #   define ________________________ADJUST_L2________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #endif
@@ -56,10 +56,10 @@
 #define ________________________ADJUST_R2________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 
 #if defined(SECRETS_ENABLE)
-#   define ________________________SECRET_L1________________________ M_XXX1  , XXXXXXX , M_XXX3  , XXXXXXX , M_XXX5  , XXXXXXX 
-#   define ________________________SECRET_L2________________________ XXXXXXX , M_XXX2  , XXXXXXX , M_XXX4  , XXXXXXX , XXXXXXX 
-#   define ________________________SECRET_L3________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX 
-                                                                                                                  
+#   define ________________________SECRET_L1________________________ M_XXX1  , XXXXXXX , M_XXX3  , XXXXXXX , M_XXX5  , XXXXXXX
+#   define ________________________SECRET_L2________________________ XXXXXXX , M_XXX2  , XXXXXXX , M_XXX4  , XXXXXXX , XXXXXXX
+#   define ________________________SECRET_L3________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
+
 #   define ________________________SECRET_R1________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #   define ________________________SECRET_R2________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #   define ________________________SECRET_R3________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
@@ -71,8 +71,8 @@
 #define _______________MOUSE_1_______________ KC_BTN1 , KC_MS_U , KC_BTN2 , KC_WH_D
 #define _______________MOUSE_2_______________ KC_MS_L , KC_MS_D , KC_MS_R , KC_WH_U
 
-#define ____________________MEDIA_1____________________ KC_BRMU , KC_MFFD , KC_MPLY , KC_VOLU , K_BACK 
-#define ____________________MEDIA_2____________________ KC_BRMD , KC_MRWD , KC_MUTE , KC_VOLD , K_FWRD  
+#define ____________________MEDIA_1____________________ KC_BRMU , KC_MFFD , KC_MPLY , KC_VOLU , K_BACK
+#define ____________________MEDIA_2____________________ KC_BRMD , KC_MRWD , KC_MUTE , KC_VOLD , K_FWRD
 
 #define _________MOD_LEFT__________ T_GUI   , FCT_DEL , RAI_SPC
 #define _________MOD_RIGHT_________ RAI_ENT , FCT_BSP , KC_ROPT

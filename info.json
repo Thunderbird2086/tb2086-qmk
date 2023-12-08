@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "unicorne",
+    "keyboard_name": "uniCorne",
     "manufacturer": "Thunderbird2086",
     "maintainer": "Allen Choi",
     "bootloader": "caterina",
@@ -23,10 +23,10 @@
         "device_version": "1.0.0",
         "pid": "0x2086",
         "vid": "0xFEED"
-    }, 
+    },
     "rgb_matrix": {
         "driver": "ws2812"
-    }, 
+    },
     "ws2812": {
         "pin": "D3"
     }
