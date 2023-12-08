@@ -3,6 +3,6 @@
     "build_targets": [
         ["unicorne/3x5", "default"],
         ["unicorne/3x6", "default"],
-        ["unicorne/3x6", "thunderbid2086"]
+        ["unicorne/3x6", "thunderbird2086"]
     ]
 }
