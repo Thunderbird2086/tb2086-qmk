@@ -87,7 +87,7 @@ __attribute__((weak))
 void set_rgb_by_layer(layer_state_t state) {
     return;
 }
-#endif 
+#endif
 
 layer_state_t layer_state_set_user(layer_state_t state) {
 #   if defined(RGBLIGHT_ENABLE)
@@ -97,5 +97,5 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _FUNCTION, _ADJUST, _SECRET);
 #   else
     return state;
-#   endif 
+#   endif
 }

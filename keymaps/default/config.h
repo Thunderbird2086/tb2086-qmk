@@ -76,7 +76,7 @@
 //#   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_COLOR
 #   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_ALPHAS_MODS
 
-    //  Disable the animations you don't want/need.  You will need to disable a good number of these 
+    //  Disable the animations you don't want/need.  You will need to disable a good number of these
     //  because they take up a lot of space.  Disable until you can successfully compile your firmware.
 #   define ENABLE_RGB_MATRIX_ALPHAS_MODS 	
 #    undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN 	
@@ -109,7 +109,9 @@
 #    undef ENABLE_RGB_MATRIX_PIXEL_RAIN 	
 
 #   define RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#    undef ENABLE_RGB_MATRIX_TYPING_HEATMAP 	
+#   if !defined(OLED_ENABLE)
+#       define ENABLE_RGB_MATRIX_TYPING_HEATMAP 	
+#   endif
 #   define ENABLE_RGB_MATRIX_DIGITAL_RAIN 	
 
     //  These modes introduce additional logic that can increase firmware size.

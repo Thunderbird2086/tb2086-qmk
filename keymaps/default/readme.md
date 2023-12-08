@@ -1,6 +1,6 @@
 # uniCorne 3x5 Layout
 
-The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to home position keys on each side. 
+The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to home position keys on each side.
 
 ## Thumb keys
 
@@ -17,13 +17,13 @@ The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to 
 - Colemak-DH: base layer.
   ![colemak-dh](https://i.imgur.com/8QfJT6e.png)
 
-- CODE: numbers and symbols.  
+- CODE: numbers and symbols.
   ![symbol](https://i.imgur.com/X2zh6rS.png)
 
-- FUNCTION: function keys 
+- FUNCTION: function keys
   ![function](https://i.imgur.com/sTzqbvF.png)
 
-- NAVIGATION: navigation keys 
+- NAVIGATION: navigation keys
   ![navigation](https://i.imgur.com/WGBksqF.png)
 
 - MEDEA: Media, Power control, RGB control, and reset

@@ -36,7 +36,7 @@ The concept is Mac and **pinky** friendly keymap.
     | j           |                       |  Command(⌘)      |
     | ;           |                       |  Control(⌃)      |
 
-- CODE: numbers and symbols.  
+- CODE: numbers and symbols.
   ![symbol](https://i.imgur.com/BPgPlYX.png)
   - Thumb keys
     | Tap         |  Double tap           |  Long tap        |
@@ -47,7 +47,7 @@ The concept is Mac and **pinky** friendly keymap.
     | ---         | ---                   |  ---             |
     | `           | Command(⌘) + `        |                  |
 
-- FUNCTION: function, meadia and navigation keys 
+- FUNCTION: function, meadia and navigation keys
   ![function](https://i.imgur.com/cs5haUP.png)
   - Thumb keys
     | Tap         |  Double tap           |  Long tap        |

@@ -57,5 +57,5 @@ void render_prompt(void) {
 }
 
 void render_keylogger_status(void) {
-    oled_write(read_keylogs(), false); 
+    oled_write(read_keylogs(), false);
 }

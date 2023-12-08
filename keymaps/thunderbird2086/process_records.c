@@ -49,7 +49,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #               if defined(RGBLIGHT_ENABLE)
                 eeconfig_update_rgblight_default();
                 rgblight_enable();
-#               else 
+#               else
                 eeconfig_update_rgb_matrix_default();
 #               endif
                 break;
