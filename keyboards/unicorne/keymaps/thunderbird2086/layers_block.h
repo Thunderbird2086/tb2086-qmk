@@ -77,8 +77,8 @@
 #define _________MOD_LEFT__________ T_GUI   , FCT_DEL , RAI_SPC
 #define _________MOD_RIGHT_________ RAI_ENT , FCT_BSP , KC_ROPT
 #if defined(APPLE_FN_ENABLE)
-#   define _______MOD_TRNS_LEFT_______ KC_TRNS    , T_ESC      , KC_APPLE_FN
-#   define _______MOD_TRNS_RIGHT______ KC_APPLE_FN, T_ESC      , KC_TRNS
+#   define _______MOD_TRNS_LEFT_______ KC_TRNS    , T_ESC      , KC_GLOBE
+#   define _______MOD_TRNS_RIGHT______ KC_GLOBE   , T_ESC      , KC_TRNS
 #else
 #   define _______MOD_TRNS_LEFT_______ KC_TRNS    , T_ESC      , XXXXXXX
 #   define _______MOD_TRNS_RIGHT______ XXXXXXX    , T_ESC      , KC_TRNS

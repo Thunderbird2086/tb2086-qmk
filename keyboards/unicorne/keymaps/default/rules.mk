@@ -1,5 +1,6 @@
 RGB_MATRIX_ENABLE = yes
 OLED_ENABLE = yes
+APPLE_FN_ENABLE = yes
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += ./lib/keylogger.c
