@@ -1,4 +1,9 @@
 {
+    "features": {
+        "oled": true,
+        "rgb_matrix": true,
+        "rgblight": false
+    },
     "rgblight": {
         "sleep": true,
         "animations" : {
@@ -17,12 +22,64 @@
     "rgb_matrix": {
         "sleep": true,
         "animations" : {
-            "alpha_mods": true,
-            "breathing": true,
+            "solid_color": false,
+            "alphas_mods": true,
+            "gradient_up_down": false,
+            "gradient_left_right": false,
+            "breathing": false,
+            "band_sat": false,
+            "band_val": false,
+            "band_pinwheel_sat": false,
+            "band_pinwheel_val": false,
+            "band_spiral_sat": false,
+            "band_spiral_val": false,
+            "cycle_all": false,
             "cycle_left_right": false,
-            "rainbow_moving_chevron": true,
-            "rainbow_beacon": true,
-            "pixel_flow": true
+            "cycle_up_down": false,
+            "cycle_out_in": false,
+            "cycle_out_in_dual": false,
+            "rainbow_moving_chevron": false,
+            "cycle_pinwheel": false,
+            "cycle_spiral": false,
+            "dual_beacon": false,
+            "rainbow_beacon": false,
+            "rainbow_pinwheels": false,
+            "flower_blooming": true,
+            "raindrops": false,
+            "jellybean_raindrops": false,
+            "hue_breathing": false,
+            "hue_pendulum": false,
+            "hue_wave": false,
+            "pixel_fractal": false,
+            "pixel_flow": false,
+            "pixel_rain": false,
+            "starlight": true,
+            "starlight_dual_hue": true,
+            "starlight_dual_sat": true,
+            "riverflow": true,
+            "typing_heatmap": false,
+            "digital_rain": false,
+            "solid_reactive_simple": false,
+            "solid_reactive": false,
+            "solid_reactive_wide": false,
+            "solid_reactive_multiwide": false,
+            "solid_reactive_cross": false,
+            "solid_reactive_multicross": false,
+            "solid_reactive_nexus": false,
+            "solid_reactive_multinexus": false,
+            "splash": false,
+            "multisplash": true,
+            "solid_splash": false,
+            "solid_multisplash": false
+        },
+        "default": {
+            "animation": "flower_blomming",
+            "on": true,
+            "max_brightness": 150,
+            "hue_steps": 32,
+            "sat_steps": 64,
+            "val_steps": 64,
+            "speed_steps": 20
         }
     }
 }

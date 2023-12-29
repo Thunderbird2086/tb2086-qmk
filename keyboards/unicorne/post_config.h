@@ -32,13 +32,14 @@
 
 #ifdef RGBLIGHT_ENABLE
 #    ifndef RGBLIGHT_LIMIT_VAL
-#        define RGBLIGHT_LIMIT_VAL 120
+#        define RGBLIGHT_LIMIT_VAL 150
 #    endif
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
 #    ifndef RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#        define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120
+#        define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+        // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
 #    endif
 #endif
 

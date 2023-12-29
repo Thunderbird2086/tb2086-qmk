@@ -81,8 +81,6 @@
 #if defined(RGB_MATRIX_ENABLE)
 #   define SPLIT_LAYER_STATE_ENABLE
 #   define RGB_DISABLE_WHEN_USB_SUSPENDED       // turn off effects when suspended
-#   define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
-        // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
 #   define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
 #   define RGB_MATRIX_HUE_STEP 32
 #   define RGB_MATRIX_SAT_STEP 64
