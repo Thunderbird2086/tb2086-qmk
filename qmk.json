@@ -1,11 +1,16 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["unicorne/3x5", "default"],
-        ["unicorne/3x5", "nooled"],
-        ["unicorne/3x6", "default"],
-        ["unicorne/3x6", "nooled"],
-        ["unicorne/3x6", "thunderbird2086"]
+        ["unicorne/3x5/promicro", "default"],
+        ["unicorne/3x5/promicro", "nooled"],
+        ["unicorne/3x6/promicro", "default"],
+        ["unicorne/3x6/promicro", "nooled"],
+        ["unicorne/3x6/promicro", "thunderbird2086"]
+        ["unicorne/3x5/elite_pi", "default"],
+        ["unicorne/3x5/elite_pi", "nooled"],
+        ["unicorne/3x6/elite_pi", "default"],
+        ["unicorne/3x6/elite_pi", "nooled"],
+        ["unicorne/3x6/elite_pi", "thunderbird2086"]
         ["winry/winry315", "zoom"]
     ]
 }
