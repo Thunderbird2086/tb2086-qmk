@@ -11,7 +11,7 @@ jobs:
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
       qmk_repo: Thunderbird2086/qmk_firmware
-      qmk_ref: dactyl_manuform-apple-fn
+      qmk_ref: _tb2086
 
   publish:
     name: 'QMK Userspace Publish'
