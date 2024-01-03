@@ -49,6 +49,8 @@
 
 #define VER_NEWLINE_WAIT 200 // in milliseconds
 
+#define SPLIT_TRANSPORT_MIRROR
+
 #if defined(OLED_ENABLE)
 #   define SPLIT_LAYER_STATE_ENABLE
 #   define SPLIT_LED_STATE_ENABLE
