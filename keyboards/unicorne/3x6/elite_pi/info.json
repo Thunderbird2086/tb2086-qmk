@@ -9,7 +9,7 @@
         "pid": "0x1982"
     },
     "matrix_pins": {
-        "cols": [ "GP29", "GP28", "GP27", "GP26", "GP25", "GP24" ],
+        "cols": [ "GP29", "GP28", "GP27", "GP26", "GP22", "GP20" ],
         "rows": [ "GP4", "GP5", "GP6", "GP7" ]
     },
     "ws2812": {
