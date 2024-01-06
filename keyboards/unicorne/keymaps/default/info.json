@@ -1,8 +1,6 @@
 {
     "features": {
-        "oled": true,
-        "rgb_matrix": true,
-        "rgblight": false
+        "oled": true
     },
     "rgblight": {
         "sleep": true,
