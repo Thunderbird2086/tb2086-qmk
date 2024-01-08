@@ -6,11 +6,13 @@
         ["unicorne/3x6/promicro", "default"],
         ["unicorne/3x6/promicro", "nooled"],
         ["unicorne/3x6/promicro", "thunderbird2086"]
-        ["unicorne/3x5/elite_pi", "default"],
-        ["unicorne/3x5/elite_pi", "nooled"],
-        ["unicorne/3x6/elite_pi", "default"],
-        ["unicorne/3x6/elite_pi", "nooled"],
-        ["unicorne/3x6/elite_pi", "thunderbird2086"]
+        ["unicorne/3x5/rp2040", "default"],
+        ["unicorne/3x5/rp2040", "nooled"],
+        ["unicorne/3x6/rp2040", "default"],
+        ["unicorne/3x6/rp2040", "nooled"],
+        ["unicorne/3x5/rp2040_handed", "default"],
+        ["unicorne/3x5/rp2040_handed", "nooled"],
+        ["unicorne/3x6/rp2040", "thunderbird2086"]
         ["winry/winry315", "zoom"]
     ]
 }
