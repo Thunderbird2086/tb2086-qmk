@@ -5,29 +5,35 @@
         ["unicorne/3x5/promicro", "nooled"],
         ["unicorne/3x5/promicro", "norgb"],
         ["unicorne/3x5/promicro", "plain"],
+        ["unicorne/3x5/promicro", "via"],
         ["unicorne/3x5/rp2040/nohanded", "default"],
         ["unicorne/3x5/rp2040/nohanded", "nooled"],
         ["unicorne/3x5/rp2040/nohanded", "norgb"],
         ["unicorne/3x5/rp2040/nohanded", "plain"],
+        ["unicorne/3x5/rp2040/nohanded", "via"],
         ["unicorne/3x5/rp2040/handed", "default"],
         ["unicorne/3x5/rp2040/handed", "nooled"],
         ["unicorne/3x5/rp2040/handed", "norgb"],
         ["unicorne/3x5/rp2040/handed", "plain"],
+        ["unicorne/3x5/rp2040/handed", "via"],
         ["unicorne/3x6/promicro", "default"],
         ["unicorne/3x6/promicro", "nooled"],
         ["unicorne/3x6/promicro", "norgb"],
         ["unicorne/3x6/promicro", "plain"],
         ["unicorne/3x6/promicro", "thunderbird2086"]
+        ["unicorne/3x6/promicro", "via"],
         ["unicorne/3x6/rp2040/nohanded", "default"],
         ["unicorne/3x6/rp2040/nohanded", "nooled"],
         ["unicorne/3x6/rp2040/nohanded", "norgb"],
         ["unicorne/3x6/rp2040/nohanded", "plain"],
         ["unicorne/3x6/rp2040/nohanded", "thunderbird2086"]
+        ["unicorne/3x6/rp2040/nohanded", "via"],
         ["unicorne/3x6/rp2040/handed", "default"],
         ["unicorne/3x6/rp2040/handed", "nooled"],
         ["unicorne/3x6/rp2040/handed", "norgb"],
         ["unicorne/3x6/rp2040/handed", "plain"],
         ["unicorne/3x6/rp2040/handed", "thunderbird2086"]
+        ["unicorne/3x6/rp2040/handed", "via"],
         ["winry/winry315", "zoom"]
     ]
 }
