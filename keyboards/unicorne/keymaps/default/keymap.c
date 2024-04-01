@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_F12,                               KC_F11,    KC_RCMD,   KC_RCTL,   KC_RSFT,   KC_ROPT,
         KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_CAPS,                              KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,
 #if defined(APPLE_FN_ENABLE)
-                                         NAV_ESC,  KC_GLOBE,   COD_SPC,        COD_ENT,   KC_GLOBE,  MED_DEL
+                                         NAV_ESC,   AP_FN,     COD_SPC,        COD_ENT,   AP_FN,     MED_DEL
 #else
                                          NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
 #endif

@@ -19,7 +19,7 @@
 //#define NO_ACTION_TAPPING
 #define EE_HANDS
 
-#if defined(APPLE_FN_ENABLE)
+#if defined(APPLE_USBID_ENABLE)
 /* USB Device descriptor parameter */
 #   if defined(VENDOR_ID)
 #      undef   VENDOR_ID

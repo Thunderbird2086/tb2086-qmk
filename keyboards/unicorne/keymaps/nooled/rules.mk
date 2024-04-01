@@ -1,2 +1,2 @@
 OLED_ENABLE = no
-#APPLE_FN_ENABLE = yes
+APPLE_FN_ENABLE = yes
