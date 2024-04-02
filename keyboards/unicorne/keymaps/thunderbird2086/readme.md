@@ -27,7 +27,7 @@ The concept is Mac and **pinky** friendly keymap.
     | =           |                       |  Adjust layer    |
 
 - QWERTY: same as Colemak-DH layer
-  ![qwery](https://i.imgur.com/v9JBwQu.png)
+  ![qwery](https://imgur.com/w7dH2eN.png)
   - Thumb keys : same as Colemak-DH
   - Staggered keys : almost same as Colemak-DH except
     | Tap         |  Double tap           |  Long tap        |
