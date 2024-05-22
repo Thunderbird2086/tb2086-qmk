@@ -34,9 +34,9 @@
         ["unicorne/3x6/rp2040/handed", "plain"],
         ["unicorne/3x6/rp2040/handed", "thunderbird2086"]
         ["unicorne/3x6/rp2040/handed", "via"],
-        ["unikey/bastardkb/skeletyl/elitec", "default"]
-        ["unikey/bastardkb/skeletyl/rp2040/nohanded", "default"]
-        ["unikey/bastardkb/skeletyl/rp2040/handed", "default"]
+        ["unikey/bastardkb/skeletyl/elitec", "nooled"]
+        ["unikey/bastardkb/skeletyl/rp2040/nohanded", "nooled"]
+        ["unikey/bastardkb/skeletyl/rp2040/handed", "nooled"]
         ["winry/winry315", "zoom"]
     ]
 }
