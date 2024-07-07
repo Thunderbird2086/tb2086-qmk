@@ -18,6 +18,9 @@
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
 #define EE_HANDS
+#if defined(FAULTY_ELITE_C_ADAPTOR)
+#   define	SPLIT_HAND_PIN_LOW_IS_LEFT
+#endif
 
 #if defined(APPLE_USBID_ENABLE)
 /* USB Device descriptor parameter */
