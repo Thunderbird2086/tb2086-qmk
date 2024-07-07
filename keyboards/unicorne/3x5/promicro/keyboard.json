@@ -6,9 +6,9 @@
     },
     "url": "",
     "usb": {
-        "pid": "0x2086"
+        "pid": "0x2011"
     },
-    "features": {
+    "build": {
         "lto": true
     },
     "matrix_pins": {

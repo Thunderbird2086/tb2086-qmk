@@ -1,0 +1,21 @@
+{
+    "bootloader": "caterina",
+    "processor": "atmega32u4",
+    "split": {
+        "soft_serial_pin": "D2"
+    },
+    "url": "",
+    "matrix_pins": {
+        "cols": ["F5", "B6", "D7", "E6", "B4"],
+        "rows": ["F7", "C6", "D4", "B5"]
+    },
+    "ws2812": {
+        "pin": "D3"
+    },
+    "usb": {
+        "pid": "0x1986"
+    },
+    "build": {
+        "lto": true
+    }
+}
