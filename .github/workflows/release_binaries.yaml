@@ -27,15 +27,14 @@ jobs:
     steps:
       - name: Download binaries
         if: always() && !cancelled()
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
 
       - name: Generate Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         if: always() && !cancelled()
         with:
-          token: ${{ github.token }}
-          name: QMK Firmware - ${{ github.ref }}
-          tag_name: ${{ github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: QMK Firmware - ${{ github.ref_name }}
           fail_on_unmatched_files: false
           draft: false
           prerelease: false
