@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-      * │Cha│Who│Vie│Dua│   │       │   │Mut│Cam│Sha│Han│
+      * │Cha│Who│Vie│Dua│   │       │   │Mut│Cam│Han│Sha│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │OPT│SFT│CTL│CMD│   │       │Ins│Lef│UP │Rig│PU │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤

@@ -5,8 +5,8 @@
 #include "quantum.h"
 #include "includes/font_util.h"
 
-#ifdef OLED_ENABLE
-oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
+#if defined(OLED_ENABLE)
+oled_rotation_t oled_init_kb(oled_rotation_t) {
     return OLED_ROTATION_270;
 }
 
@@ -28,6 +28,11 @@ __attribute__((weak)) bool is_feature_layer(void) {
 __attribute__((weak)) bool should_oled_off(void) {
     return false;
 }
+
+
+__attribute__((weak)) bool process_record_oled(uint16_t, keyrecord_t *) {
+    return true;
+} 
 
 
 void render_mod_status(void) {
@@ -136,9 +141,13 @@ bool oled_task_kb(void) {
     }
     return false;
 }
+#endif // OLED_ENABLE
 
 
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    return process_record_user(keycode, record);
-}
+    return process_record_user(keycode, record)
+#if     defined(OLED_ENABLE)
+        && process_record_oled(keycode, record)
 #endif // OLED_ENABLE
+        ;
+}
