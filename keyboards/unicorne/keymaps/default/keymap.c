@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Z,      KC_X,      KC_C,      KC_D,      KC_V,                                 KC_K,      KC_H,      KC_COMM,   KC_DOT,    KC_SLSH,
                                          NAV_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
-#if defined(QWERTY_ENABLED)
+#if defined(QWERTY_ENABLE)
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
       * │ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │
@@ -114,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-      * │PWR│SLP│WAK│   │   │       │R.T│R.M│LOK│R.R│Res│
+      * │PWR│SLP│WAK│   │QWE│       │R.T│R.M│LOK│R.R│Res│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │Br+│RWD│PLY│Vo+│W.B│       │   │Va+│Hu+│Sa+│Sp+│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │Br-│FWD│Mut│Vo-│W.F│       │   │Va-│Hu-│Ss-│Sp-│
+      * │Br-│FWD│Mut│Vo-│W.F│       │COL│Va-│Hu-│Ss-│Sp-│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *           ┌───┐                   ┌───┐
       *           │ESC├───┐           ┌───┤   │
@@ -127,9 +127,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *                   └───┘   └───┘
       */
     [_MEDIA] = LAYOUT_split_3x5_3(
-        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    QK_BOOT,
+#       if defined(QWERTY_ENABLE)
+        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     QWERTY,                               RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    QK_BOOT,
+#       else
+        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,      KC_NO,                               RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    QK_BOOT,
+#       endif
         KC_BRIU,   KC_MPRV,   KC_MPLY,   KC_VOLU,   K_BACK,                               KC_NO,     RGB_VAI,   RGB_HUI,   RGB_SAI,   RGB_SPI,
-        KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               KC_NO,     RGB_VAD,   RGB_HUD,   RGB_SAD,   RGB_SPD,
+        KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               COLEMAK,   RGB_VAD,   RGB_HUD,   RGB_SAD,   RGB_SPD,
                                          MOU_ESC,   FCT_TAB,   COD_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
