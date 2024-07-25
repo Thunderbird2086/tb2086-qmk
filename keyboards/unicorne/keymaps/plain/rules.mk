@@ -1,3 +1,7 @@
 OLED_ENABLE = no
 RGB_MATRIX_ENABLE = no
-APPLE_FN_ENABLE = yes
+#APPLE_FN_ENABLE = yes
+
+SRC += process_records.c
+
+#OPT_DEFS += -DQWERTY_ENABLE
