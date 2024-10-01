@@ -8,9 +8,12 @@ enum custom_tapdances {
     TD_TAB_CTRLTAB,
     TD_GRV_CTRLGRV,
     TD_GUI_GUISPC,
+    TD_NONE
 };
 
 #define T_ESC  TD(TD_ESC_CAPS)          // Tap for ESC, double tap for CAPSLOCK
 #define T_TAB  TD(TD_TAB_CTRLTAB)       // Tap for TAB, double tap for CTRL + TAB
 #define T_GRV  TD(TD_GRV_CTRLGRV)       // Tap for GRV, double tap for Cmd + GRV
 #define T_GUI  TD(TD_GUI_GUISPC)        // Tap for Cmd, double tap for Cmd + Space
+
+tap_dance_action_t tap_dance_actions[TD_NONE];
