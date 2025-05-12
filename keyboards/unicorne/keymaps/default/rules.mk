@@ -9,4 +9,4 @@ SRC += oled.c
 SRC += process_records.c
 
 OPT_DEFS += -DQWERTY_ENABLE
-#OPT_DEFS += -DAPPLE_USBID_ENABLE
+OPT_DEFS += -DAPPLE_USBID_ENABLE
