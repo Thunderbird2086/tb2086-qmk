@@ -1,6 +1,7 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
+        ["non_nemo", "default"],
         ["paddle/3x5/promicro", "default"],
         ["unicorne/3x5/promicro", "default"],
         ["unicorne/3x5/promicro", "nooled"],
