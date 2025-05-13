@@ -1,6 +1,8 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
+        ["bwit/3x5_keypad", "zoom"],
+        ["bwit/3x5_keypad", "via"],
         ["non_nemo", "default"],
         ["unicorne/3x5/promicro", "default"],
         ["unicorne/3x5/promicro", "nooled"],
