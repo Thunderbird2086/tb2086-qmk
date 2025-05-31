@@ -5,6 +5,42 @@
 
 #include "keycodes.h"
 
+#if defined(OS_DETECTION_ENABLE) && defined(DEFERRED_EXEC_ENABLE)
+
+#include "os_detection.h"
+os_variant_t os_type;
+
+uint32_t custom_os_settings(uint32_t trigger_time, void *cb_arg) {
+    if (is_keyboard_master()) {
+        os_type = detected_host_os();
+        if (os_type) {
+            switch (os_type) {
+                case OS_MACOS:
+                case OS_IOS:
+                    layer_move(0);
+                    break;
+                case OS_LINUX:
+                case OS_WINDOWS:
+                    layer_move(1);
+                    break;
+                case OS_UNSURE:
+                    layer_move(0);
+                    break;
+                default:
+                    layer_move(0);
+                    break;
+            }
+        }
+    }
+
+    return os_type ? 0 : 500;
+}
+
+void keyboard_post_init_user(void) {
+  defer_exec(100, custom_os_settings, NULL);
+}
+#endif
+
 //  macOS       | Windows     |  Description
 //  ------------+-------------+------------------------------------
 //  SCMD(KC_A)  | LALT(KC_A)  |  Audio On/Off
