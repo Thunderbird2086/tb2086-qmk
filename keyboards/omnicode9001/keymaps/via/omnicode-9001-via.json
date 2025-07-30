@@ -6,30 +6,59 @@
     "rows": 18,
     "cols": 7
   },
-  "menus": ["qmk_rgblight"],
-  "keycodes": ["qmk_lighting"],
-  "custom_keycodes": [
-    { "name": "OC_ZOOM_AUDIO",
+  "customKeycodes": [
+    {
+      "name": "OC_ZOOM_AUDIO",
       "title": "Zoom Audio Toggle",
-      "shortName": "ZoomAudio",
-      "code": "OC_ZOOM_AUDIO"
+      "shortName": "OC_ZA"
     },
-    { "name": "OC_ZOOM_VIDEO",
+    {
+      "name": "OC_ZOOM_VIDEO",
       "title": "Zoom Video Toggle",
-      "shortName": "ZoomVideo",
-      "code": "OC_ZOOM_VIDEO"
+      "shortName": "OC_ZV"
+    },
+    {
+      "name": "OC_ZOOM_SHARE",
+      "title": "Zoom Share Screen",
+      "shortName": "OC_ZS"
+    },
+    {
+      "name": "OC_ZOOM_CHAT",
+      "title": "Zoom Chat",
+      "shortName": "OC_ZC"
+    },
+    {
+      "name": "OC_ZOOM_LEAVE",
+      "title": "Leave Meeting",
+      "shortName": "OC_ZL"
+    },
+    {
+      "name": "OC_ZOOM_RAISE",
+      "title": "Raise/Lower Hand",
+      "shortName": "OC_ZH"
+    },
+    {
+      "name": "OC_ZOOM_RECORD",
+      "title": "Start/Stop Recording",
+      "shortName": "OC_ZR"
     }
   ],
+  "menus": ["qmk_rgblight"],
+  "keycodes": ["qmk_lighting"],
   "layouts": {
     "keymap": [
       [
+        { "c": "#777777" },
         "0,0",
         { "x": 1 },
         "0,2",
         "0,3",
         "0,4",
         "0,5",
-        { "x": 0.5 },
+        {
+          "x": 0.5,
+          "c": "#cccccc"
+        },
         "0,6",
         "6,6",
         "6,5",

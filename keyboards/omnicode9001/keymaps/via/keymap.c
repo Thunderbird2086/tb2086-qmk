@@ -4,11 +4,21 @@
 
 enum custom_keycodes {
     OC_ZOOM_VIDEO = SAFE_RANGE,
-	OC_ZOOM_AUDIO,
+    OC_ZOOM_AUDIO,
+    OC_ZOOM_SHARE,     // Start/Stop Share Screen
+    OC_ZOOM_CHAT,      // Open Chat
+    OC_ZOOM_LEAVE,     // Leave Meeting
+    OC_ZOOM_RAISE,     // Raise/Lower Hand
+    OC_ZOOM_RECORD,    // Start/Stop Recording
 };
 
 #define OC_ZV OC_ZOOM_VIDEO
 #define OC_ZA OC_ZOOM_AUDIO
+#define OC_ZS OC_ZOOM_SHARE
+#define OC_ZC OC_ZOOM_CHAT
+#define OC_ZL OC_ZOOM_LEAVE
+#define OC_ZH OC_ZOOM_RAISE
+#define OC_ZR OC_ZOOM_RECORD
 
 // Function to send a key combination for OS-specific actions
 void send_combo(uint16_t mod1, uint16_t mod2, uint16_t key) {
@@ -95,9 +105,98 @@ bool zoom_audio(bool pressed) {
 			send_combo(KC_LALT, KC_NO, KC_A);
 			break;
 		default:
-			return true; // Do not process if the OS is not recognized
+			return true;
 	}
+	return false;
+}
 
+bool zoom_share(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_S);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_S);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_chat(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_H);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_H);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_leave(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_NO, KC_W);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_Q);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_raise_hand(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LALT, KC_NO, KC_Y);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_Y);
+			break;
+		default:
+			return true;
+	}
+	return false;
+}
+
+bool zoom_record(bool pressed) {
+	if (!pressed) return true;
+	
+	switch(detected_host_os()) {
+		case OS_MACOS:
+		case OS_IOS:
+			send_combo(KC_LGUI, KC_LSFT, KC_R);
+			break;
+		case OS_WINDOWS:
+		case OS_LINUX:
+			send_combo(KC_LALT, KC_NO, KC_R);
+			break;
+		default:
+			return true;
+	}
 	return false;
 }
 
@@ -110,6 +209,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case OC_ZOOM_VIDEO:
 			result = zoom_video(record->event.pressed);
+			break;
+		case OC_ZOOM_SHARE:
+			result = zoom_share(record->event.pressed);
+			break;
+		case OC_ZOOM_CHAT:
+			result = zoom_chat(record->event.pressed);
+			break;
+		case OC_ZOOM_LEAVE:
+			result = zoom_leave(record->event.pressed);
+			break;
+		case OC_ZOOM_RAISE:
+			result = zoom_raise_hand(record->event.pressed);
+			break;
+		case OC_ZOOM_RECORD:
+			result = zoom_record(record->event.pressed);
 			break;
 		default:
 			result = true; // Allow other keycodes to be processed normally
