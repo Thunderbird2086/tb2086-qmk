@@ -6,6 +6,7 @@
         ["non_nemo", "default"],
         ["omnicode9001", "default"],
         ["omnicode9001", "via"],
+        ["tpcm", "default"],
         ["unicorne/3x5/promicro", "default"],
         ["unicorne/3x5/promicro", "nooled"],
         ["unicorne/3x5/promicro", "norgb"],
