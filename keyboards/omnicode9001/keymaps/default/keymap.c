@@ -22,6 +22,46 @@ void send_combo(uint16_t mod1, uint16_t mod2, uint16_t key) {
     if (mod1 != KC_NO) unregister_code(mod1);
 }
 
+#if defined(RGBLIGHT_ENABLE) || defined(RGB_MATRIX_ENABLE)
+#   if defined(RGB_MATREX_ENABLE)
+#		define OC_HUEU  RM_HUEU
+#		define OC_SATU  RM_SATU
+#		define OC_VALU  RM_VALU
+#		define OC_SPDU  RM_SPDU
+#		define OC_PREV  RM_PREV
+#		define OC_TOGG  RM_TOGG
+#		define OC_NEXT  RM_NEXT
+#		define OC_HUED  RM_HUED
+#		define OC_SATD  RM_SATD
+#		define OC_VALD  RM_VALD
+#		define OC_SPDD  RM_SPDD
+#   else
+#		define OC_HUEU  UG_HUEU
+#		define OC_SATU  UG_SATU
+#		define OC_VALU  UG_VALU
+#		define OC_SPDU  UG_SPDU
+#		define OC_PREV  UG_PREV
+#		define OC_TOGG  UG_TOGG
+#		define OC_NEXT  UG_NEXT
+#		define OC_HUED  UG_HUED
+#		define OC_SATD  UG_SATD
+#		define OC_VALD  UG_VALD
+#		define OC_SPDD  UG_SPDD
+#   endif
+#else
+#	define OC_HUEU  _______
+#	define OC_SATU  _______
+#	define OC_VALU  _______
+#	define OC_SPDU  _______
+#	define OC_PREV  _______
+#	define OC_TOGG  _______
+#	define OC_NEXT  _______
+#	define OC_HUED  _______
+#	define OC_SATD  _______
+#	define OC_VALD  _______
+#	define OC_SPDD  _______
+#endif
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[0] = LAYOUT(
@@ -54,9 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[3] = LAYOUT(
 		QK_BOOT,          DF(0)  , DF(1)  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		QK_RBT , _______, _______, _______, _______, _______, _______, RM_PREV, RM_TOGG, RM_NEXT, _______, _______,          _______,                                    _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, RM_HUED, RM_SATD, RM_VALD, RM_SPDD,                   _______,              _______,              _______, _______, _______, _______,
+		_______, _______, _______, _______, _______, _______, _______, OC_HUEU, OC_SATU, OC_VALU, OC_SPDU, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		QK_RBT , _______, _______, _______, _______, _______, _______, OC_PREV, OC_TOGG, OC_NEXT, _______, _______,          _______,                                    _______, _______, _______,
+		_______, _______, _______, _______, _______, _______, _______, OC_HUED, OC_SATD, OC_VALD, OC_SPDD,                   _______,              _______,              _______, _______, _______, _______,
 		EE_CLR , _______, _______,                   _______,                            _______, _______, _______,          _______,     _______, _______, _______,     _______,          _______
 	),
 
