@@ -50,22 +50,23 @@
             "twinkle": true
         },
         "default": {
-            "val": 0
+            "val": 182
         },
-        "max_brightness": 24,
+        "max_brightness": 182,
         "sleep": true
     },
     "rgb_matrix": {
         "driver": "ws2812",
         "default": {
             "animation": "solid_reactive_multicross",
-            "val": 150
+            "val": 182
         },
-        "max_brightness": 150,
-        "hue_steps": 32,
-        "sat_steps": 64,
-        "val_steps": 64,
-        "spd_steps": 20,
+        "led_count": 74,
+        "max_brightness": 182,
+        "hue_steps": 16,
+        "sat_steps": 16,
+        "val_steps": 16,
+        "spd_steps": 16,
         "animations": {
             "alphas_mods": true,
             "gradient_up_down": true,
@@ -97,10 +98,6 @@
             "pixel_fractal": true,
             "pixel_flow": true,
             "pixel_rain": true,
-            "starlight": true,
-            "starlight_dual_hue": true,
-            "starlight_dual_sat": true,
-            "riverflow": true,
             "typing_heatmap": true,
             "digital_rain": true,
             "solid_reactive_simple": true,
@@ -114,7 +111,12 @@
             "splash": true,
             "multisplash": true,
             "solid_splash": true,
-            "solid_multisplash": true
+            "solid_multisplash": true,
+            "starlight": true,
+            "starlight_smooth": true,
+            "starlight_dual_hue": true,
+            "starlight_dual_sat": true,
+            "riverflow": true
         },
         "layout": [
             { "matrix": [5, 2], "x": 29, "y": 64, "flags": 4 },
@@ -318,8 +320,8 @@
 
                 { "matrix": [5, 0], "x": 0, "y": 64, "w": 1.75 },
                 { "matrix": [5, 1], "x": 18, "y": 64 },
-                { "matrix": [5, 2], "x": 29, "y": 64, "w": 1.5 },
-                { "matrix": [5, 5], "x": 44, "y": 64, "w": 6 },
+                { "matrix": [5, 2], "x": 29, "y": 64, "w": 1.25 },
+                { "matrix": [5, 5], "x": 44, "y": 64, "w": 6.25 },
                 { "matrix": [11, 4], "x": 107, "y": 64 },
                 { "matrix": [11, 3], "x": 117, "y": 64 },
                 { "matrix": [11, 2], "x": 128, "y": 64 },
