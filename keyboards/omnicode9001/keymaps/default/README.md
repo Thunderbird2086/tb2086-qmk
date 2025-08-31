@@ -13,41 +13,49 @@ Standard ANSI layout with function keys and media controls:
 - Standard navigation cluster
 - Full numpad
 
-### Layer 1: Colemak Layer
+### Layer 1: Colemak-DH Layer
 ![Colemak Layer](https://imgur.com/lePWZ9E.png)
 
-Alternative Colemak layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
+Alternative Colemak-DH layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
 
 ### Layer 2: Navigation Layer (MO(2))
-![Navigation Layer](https://imgur.com/8TyfIks.png)
+![Navigation Layer](https://imgur.com/V4eytVS.png)
 
-Enhanced navigation and shortcuts:
-- WASD-style arrow cluster (Home, Up, PgUp, Left, Down, Right, End, PgDn)
-- Zoom meeting controls (Video: Comma, Audio: Dot)
-- Space triggers Layer 3
+Enhanced navigation and Zoom controls:
+- WASD-style navigation cluster:
+  - W: Up, S: Down, A: Left, D: Right
+  - E: End, R: PgUp, F: Right, G: PgDn
+- Zoom meeting controls:
+  - ZL (Esc): Leave meeting
+  - ZR (F1): Start/Stop recording
+  - ZU (Tab): Show/Hide participants
+  - ZC (CapsLock): Open chat
+  - ZH (LShift): Raise/Lower hand
+  - ZA (LCtrl): Toggle audio
+  - ZV (LOpt): Toggle video
+  - ZS (LCmd): Start/Stop screen sharing
+- Space triggers Settings Layer
 
-### Layer 3: Settings Layer (via Layer 2 + Space)
-![Function Layer](https://imgur.com/r2LamDC.png)
+### Layer 3: Settings Layer (via Navigation Layer + Space)
+![Function Layer](https://imgur.com/YZrU3nn.png)
 
-System functions:
-- QK_BOOT in ESC position
-- Layout selection (F1: Layer 0/QWERTY, F2: Layer 1/Colemak)
-- Other keys transparent to base layer
+System functions and RGB controls:
+- QK_BOOT in ESC position for firmware flashing
+- Layout selection (F1: QWERTY, F2: Colemak)
+- QK_RBT (CapsLock): Reset keyboard
+- EE_CLR (LCtrl): Clear EEPROM
+- RGB Matrix controls:
+  - Top Row(right): Hue Up, Saturation Up, Value Up, Speed Up
+  - Home Row(right): Previous Mode, Toggle On/Off, Next Mode
+  - Bottom Row(right): Hue Down, Saturation Down, Value Down, Speed Down
 
 ## Special Features
 
-### Layout Switching
-- Layer 2 + Space + F1: Switch to QWERTY
-- Layer 2 + Space + F2: Switch to Colemak
-
-### Zoom Controls (Layer 2)
-- Comma: Toggle Video (⌘⇧V on macOS, Alt+V on Windows/Linux)
-- Dot: Toggle Audio (⌘⇧A on macOS, Alt+A on Windows/Linux)
-
-### System Controls
-- Top right cluster: Mute, Volume Down, Volume Up
-- F-row right side: Screen brightness controls
-- QK_BOOT available through Layer 3
+### OS-Specific Key Mapping
+- On Windows: Command (⌘) and Option (⌥) keys are automatically swapped in both QWERTY and Colemak layouts
+- On macOS: Keys maintain their standard positions
+  - Left side: Option (⌥) then Command (⌘)
+  - Right side: Command (⌘) then Option (⌥)
 
 ## Customization
 
@@ -62,12 +70,5 @@ To customize this keymap:
    ```bash
    qmk flash -kb omnicode9001 -km default
    ```
-
-## Additional Notes
-
-- RGB animations can be customized in `rgb_matrix_user.c`
-- Macro definitions are in `process_record_user.c`
-- OLED display shows current layer and module status
-- VIA support is enabled by default
 
 For more advanced customization options, check the [QMK Documentation](https://docs.qmk.fm/).

@@ -8,14 +8,14 @@
   },
   "customKeycodes": [
     {
-      "name": "OC_ZOOM_AUDIO",
-      "title": "Zoom Audio Toggle",
-      "shortName": "OC_ZA"
-    },
-    {
       "name": "OC_ZOOM_VIDEO",
       "title": "Zoom Video Toggle",
       "shortName": "OC_ZV"
+    },
+    {
+      "name": "OC_ZOOM_AUDIO",
+      "title": "Zoom Audio Toggle",
+      "shortName": "OC_ZA"
     },
     {
       "name": "OC_ZOOM_SHARE",
@@ -26,6 +26,11 @@
       "name": "OC_ZOOM_CHAT",
       "title": "Zoom Chat",
       "shortName": "OC_ZC"
+    },
+    {
+      "name": "OC_ZOOM_PARTICIPANTS",
+      "title": "Zoom Participants",
+      "shortName": "OC_ZU"
     },
     {
       "name": "OC_ZOOM_LEAVE",
@@ -43,7 +48,7 @@
       "shortName": "OC_ZR"
     }
   ],
-  "menus": ["qmk_rgblight"],
+  "menus": ["qmk_rgb_matrix"],
   "keycodes": ["qmk_lighting"],
   "layouts": {
     "keymap": [
