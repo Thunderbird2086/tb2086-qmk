@@ -8,37 +8,52 @@
   },
   "customKeycodes": [
     {
-      "name": "OC_ZOOM_AUDIO",
-      "title": "Zoom Audio Toggle",
-      "shortName": "OC_ZA"
+      "name": "QWERTY",
+      "title": "Layer to QWERTY",
+      "shortName": "QWERTY"
     },
     {
-      "name": "OC_ZOOM_VIDEO",
+      "name": "COLEMAK",
+      "title": "Layer to COLEMAK",
+      "shortName": "COLEMAK"
+    },
+    {
+      "name": "ZOOM_VIDEO",
       "title": "Zoom Video Toggle",
       "shortName": "OC_ZV"
     },
     {
-      "name": "OC_ZOOM_SHARE",
+      "name": "ZOOM_AUDIO",
+      "title": "Zoom Audio Toggle",
+      "shortName": "OC_ZA"
+    },
+    {
+      "name": "ZOOM_SHARE",
       "title": "Zoom Share Screen",
       "shortName": "OC_ZS"
     },
     {
-      "name": "OC_ZOOM_CHAT",
+      "name": "ZOOM_CHAT",
       "title": "Zoom Chat",
       "shortName": "OC_ZC"
     },
     {
-      "name": "OC_ZOOM_LEAVE",
+      "name": "ZOOM_USERS",
+      "title": "Zoom Participants",
+      "shortName": "OC_ZU"
+    },
+    {
+      "name": "ZOOM_LEAVE",
       "title": "Leave Meeting",
       "shortName": "OC_ZL"
     },
     {
-      "name": "OC_ZOOM_RAISE",
+      "name": "ZOOM_RAISE",
       "title": "Raise/Lower Hand",
       "shortName": "OC_ZH"
     },
     {
-      "name": "OC_ZOOM_RECORD",
+      "name": "ZOOM_RECORD",
       "title": "Start/Stop Recording",
       "shortName": "OC_ZR"
     }

@@ -19,12 +19,12 @@ Standard ANSI layout with function keys and media controls:
 Alternative Colemak-DH layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
 
 ### Layer 2: Navigation Layer (MO(2))
-![Navigation Layer](https://imgur.com/V4eytVS.png)
+![Navigation Layer](https://imgur.com/L8yTYeL.png)
 
 Enhanced navigation and Zoom controls:
 - WASD-style navigation cluster:
-  - W: Up, S: Down, A: Left, D: Right
-  - E: End, R: PgUp, F: Right, G: PgDn
+  - E: Up, D: Down, S: Left, F: Right
+  - W: Home, R: End, T: PgUp, G: PgDn
 - Zoom meeting controls:
   - ZL (Esc): Leave meeting
   - ZR (F1): Start/Stop recording
