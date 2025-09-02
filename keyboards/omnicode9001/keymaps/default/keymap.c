@@ -3,7 +3,9 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    OC_ZV = QK_KB_0,	// Video On/Off
+    QWERTY = QK_KB_0,   // QWERTY
+    COLEMAK,            // COLEMAK
+    OC_ZV,          	// Video On/Off
     OC_ZA,				// Audio Mute/Unmute
     OC_ZS,     			// Start/Stop Share Screen
     OC_ZC,    			// Open Chat
@@ -62,6 +64,9 @@ void send_combo(uint16_t mod1, uint16_t mod2, uint16_t key) {
 #	define OC_SPDD  _______
 #endif
 
+#define QWERTY_LAYER 0
+#define COLMAK_LAYER 1
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[0] = LAYOUT(
@@ -92,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 	[3] = LAYOUT(
-		QK_BOOT,          DF(0)  , DF(1)  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		QK_BOOT,          QWERTY , COLEMAK, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		_______, _______, _______, _______, _______, _______, _______, OC_HUEU, OC_SATU, OC_VALU, OC_SPDU, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		QK_RBT , _______, _______, _______, _______, _______, _______, OC_PREV, OC_TOGG, OC_NEXT, _______, _______,          _______,                                    _______, _______, _______,
@@ -255,11 +260,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	bool result = true;
 
     switch(keycode) {
-		case OC_ZA:
-			result = zoom_audio(record->event.pressed);
-			break;
+		case QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(QWERTY_LAYER);
+            }
+            return false;
+		case COLEMAK:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(COLMAK_LAYER);
+            }
+            return false;
 		case OC_ZV:
 			result = zoom_video(record->event.pressed);
+			break;
+		case OC_ZA:
+			result = zoom_audio(record->event.pressed);
 			break;
 		case OC_ZS:
 			result = zoom_share(record->event.pressed);
@@ -280,8 +295,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			result = zoom_record(record->event.pressed);
 			break;
 		default:
-			result = true; // Allow other keycodes to be processed normally
-			break;
+			return true; // Allow other keycodes to be processed normally
 	}
 
     return result;

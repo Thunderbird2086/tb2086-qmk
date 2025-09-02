@@ -1,6 +1,7 @@
 {
     "manufacturer": "BBGHK",
     "maintainer": "Allen Choi",
+    "keyboard_name": "OmniCode:9001",
     "url": "",
     "usb": {
         "vid": "0x4242",
