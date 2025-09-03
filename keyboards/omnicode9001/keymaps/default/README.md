@@ -19,7 +19,7 @@ Standard ANSI layout with function keys and media controls:
 Alternative Colemak-DH layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
 
 ### Layer 2: Navigation Layer (MO(2))
-![Navigation Layer](https://imgur.com/L8yTYeL.png)
+![Navigation Layer](https://imgur.com/uMkaMWf.png)
 
 Enhanced navigation and Zoom controls:
 - WASD-style navigation cluster:
