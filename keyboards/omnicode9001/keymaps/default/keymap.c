@@ -247,22 +247,22 @@ bool zoom_record(bool pressed) {
 uint8_t mod_state;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    mod_state = get_mod();  // store the current modifier state for later reference
+    mod_state = get_mods();  // store the current modifier state for later reference
     switch(keycode) {
-        case KC_BPSC:
+        case KC_BSPC:
             {
-                static bool delkey_registred;
+                static bool delkey_registered;
                 if (record->event.pressed) {
                     if (mod_state & MOD_MASK_SHIFT) {
                         del_mods(MOD_MASK_SHIFT);
                         register_code(KC_DEL);
                         delkey_registered = true;
-                        set_mod(mod_state);
+                        set_mods(mod_state);
                     }
                 } else {
-                    if (delkey_registerd) {
+                    if (delkey_registered) {
                         unregister_code(KC_DEL);
-                        delkey_registered(KC_DEL);
+                        unregister_code(KC_DEL);
                     }
                 }
             }
@@ -301,7 +301,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint32_t swap_cmd_opt(uint32_t trigger_time, void *cb_arg) {
   uint16_t retry_ms = 500;
 
-  if (detect_host_os() == OS_WINDOWS) {
+  if (detected_host_os() == OS_WINDOWS) {
     keymap_config.swap_lalt_lgui = true;
     keymap_config.swap_ralt_rgui = true;
     retry_ms = 0;
