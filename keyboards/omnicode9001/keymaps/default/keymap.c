@@ -244,10 +244,29 @@ bool zoom_record(bool pressed) {
 	return false;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	bool result = true;
+uint8_t mod_state;
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    mod_state = get_mod();  // store the current modifier state for later reference
     switch(keycode) {
+        case KC_BPSC:
+            {
+                static bool delkey_registred;
+                if (record->event.pressed) {
+                    if (mod_state & MOD_MASK_SHIFT) {
+                        del_mods(MOD_MASK_SHIFT);
+                        register_code(KC_DEL);
+                        delkey_registered = true;
+                        set_mod(mod_state);
+                    }
+                } else {
+                    if (delkey_registerd) {
+                        unregister_code(KC_DEL);
+                        delkey_registered(KC_DEL);
+                    }
+                }
+            }
+            return false;
 		case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(QWERTY_LAYER);
@@ -259,41 +278,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 		case OC_ZV:
-			result = zoom_video(record->event.pressed);
-			break;
+			return zoom_video(record->event.pressed);
 		case OC_ZA:
-			result = zoom_audio(record->event.pressed);
-			break;
+			return zoom_audio(record->event.pressed);
 		case OC_ZS:
-			result = zoom_share(record->event.pressed);
-			break;
+			return zoom_share(record->event.pressed);
 		case OC_ZC:
-			result = zoom_chat(record->event.pressed);
-			break;
+			return zoom_chat(record->event.pressed);
 		case OC_ZU:
-			result = zoom_participants(record->event.pressed);
-			break;
+			return zoom_participants(record->event.pressed);
 		case OC_ZL:
-			result = zoom_leave(record->event.pressed);
-			break;
+			return zoom_leave(record->event.pressed);
 		case OC_ZH:
-			result = zoom_raise_hand(record->event.pressed);
-			break;
+			return zoom_raise_hand(record->event.pressed);
 		case OC_ZR:
-			result = zoom_record(record->event.pressed);
-			break;
-		default:
-			return true; // Allow other keycodes to be processed normally
+			return zoom_record(record->event.pressed);
 	}
 
-    return result;
+    return true; // Allow other keycodes to be processed normally
 }
 
 uint32_t swap_cmd_opt(uint32_t trigger_time, void *cb_arg) {
-  os_variant_t host = detected_host_os();
   uint16_t retry_ms = 500;
 
-  if (host == OS_WINDOWS) {
+  if (detect_host_os() == OS_WINDOWS) {
     keymap_config.swap_lalt_lgui = true;
     keymap_config.swap_ralt_rgui = true;
     retry_ms = 0;
