@@ -258,15 +258,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                         register_code(KC_DEL);
                         delkey_registered = true;
                         set_mods(mod_state);
+                        return false;
                     }
-                } else {
-                    if (delkey_registered) {
-                        unregister_code(KC_DEL);
-                        unregister_code(KC_DEL);
-                    }
+                } else if (delkey_registered) {
+                    unregister_code(KC_DEL);
+                    delkey_registered = false;
+                    return false;
                 }
             }
-            return false;
+            return true; // Outside of shift so that it becomes the usual KC_BSPC
 		case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(QWERTY_LAYER);
