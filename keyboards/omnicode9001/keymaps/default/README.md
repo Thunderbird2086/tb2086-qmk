@@ -14,12 +14,12 @@ Standard ANSI layout with function keys and media controls:
 - Full numpad
 
 ### Layer 1: Colemak-DH Layer
-![Colemak Layer](https://imgur.com/lePWZ9E.png)
+![Colemak Layer](https://imgur.com/Z7oEj8a.png)
 
 Alternative Colemak-DH layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
 
 ### Layer 2: Navigation Layer (MO(2))
-![Navigation Layer](https://imgur.com/Z7oEj8a.png)
+![Navigation Layer](https://imgur.com/kG78boA.png)
 
 Enhanced navigation and Zoom controls:
 - WASD-style navigation cluster:
@@ -37,7 +37,7 @@ Enhanced navigation and Zoom controls:
 - Space triggers Settings Layer
 
 ### Layer 3: Settings Layer (via Navigation Layer + Space)
-![Function Layer](https://imgur.com/kG78boA.png)
+![Function Layer](https://imgur.com/YZrU3nn.png)
 
 System functions and RGB controls:
 - QK_BOOT in ESC position for firmware flashing
