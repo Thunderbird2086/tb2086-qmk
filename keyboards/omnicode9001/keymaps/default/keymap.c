@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[2] = LAYOUT(
 		OC_ZL  ,          OC_ZR  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
-		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
+		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL ,     _______, _______, _______,     _______, _______, _______, _______,
 		OC_ZU  , _______, KC_HOME, KC_UP  , KC_END , KC_PGUP, _______, _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______,     _______, _______, _______, _______,
 		OC_ZC  , _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______, _______, _______, _______, _______, _______,          _______,                                    _______, _______, _______,
 		OC_ZH  , _______, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPLY, _______, _______, _______, _______, _______,                   _______,              _______,              _______, _______, _______, _______,
@@ -244,29 +244,8 @@ bool zoom_record(bool pressed) {
 	return false;
 }
 
-uint8_t mod_state;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    mod_state = get_mods();  // store the current modifier state for later reference
     switch(keycode) {
-        case KC_BSPC:
-            {
-                static bool delkey_registered;
-                if (record->event.pressed) {
-                    if (mod_state & MOD_MASK_SHIFT) {
-                        del_mods(MOD_MASK_SHIFT);
-                        register_code(KC_DEL);
-                        delkey_registered = true;
-                        set_mods(mod_state);
-                        return false;
-                    }
-                } else if (delkey_registered) {
-                    unregister_code(KC_DEL);
-                    delkey_registered = false;
-                    return false;
-                }
-            }
-            return true; // Outside of shift so that it becomes the usual KC_BSPC
 		case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(QWERTY_LAYER);

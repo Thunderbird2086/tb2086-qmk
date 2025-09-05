@@ -6,7 +6,7 @@
     "usb": {
         "vid": "0x4242",
         "pid": "0x0713",
-        "device_version": "0.5.9"
+        "device_version": "0.6.0"
     },
     "diode_direction": "COL2ROW",
     "features": {
