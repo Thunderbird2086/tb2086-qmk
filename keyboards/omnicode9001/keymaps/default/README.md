@@ -19,7 +19,7 @@ Standard ANSI layout with function keys and media controls:
 Alternative Colemak-DH layout for ergonomic typing, maintaining same function keys and media controls as Layer 0.
 
 ### Layer 2: Navigation Layer (MO(2))
-![Navigation Layer](https://imgur.com/kG78boA.png)
+![Navigation Layer](https://imgur.com/nKKRhwv.png)
 
 Enhanced navigation and Zoom controls:
 - WASD-style navigation cluster:
@@ -34,6 +34,11 @@ Enhanced navigation and Zoom controls:
   - ZA (LCtrl): Toggle audio
   - ZV (LOpt): Toggle video
   - ZS (LCmd): Start/Stop screen sharing
+- Media Control
+  - X: Volume Down
+  - C: Volume Up
+  - V: Mute
+  - B: Play/Pause
 - Space triggers Settings Layer
 
 ### Layer 3: Settings Layer (via Navigation Layer + Space)
