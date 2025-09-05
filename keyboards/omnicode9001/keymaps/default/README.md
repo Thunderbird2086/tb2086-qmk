@@ -25,6 +25,7 @@ Enhanced navigation and Zoom controls:
 - WASD-style navigation cluster:
   - E: Up, D: Down, S: Left, F: Right
   - W: Home, R: End, T: PgUp, G: PgDn
+- Backspace: Delete key
 - Zoom meeting controls:
   - ZL (Esc): Leave meeting
   - ZR (F1): Start/Stop recording
