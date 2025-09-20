@@ -292,3 +292,15 @@ uint32_t swap_cmd_opt(uint32_t trigger_time, void *cb_arg) {
 void keyboard_post_init_user(void) {
   defer_exec(100, swap_cmd_opt, NULL);
 }
+
+const uint8_t func_row_leds[] = { 3, 12, 21, 22, 31, 32, 41,  42, 51, 52, 60, 61, 68 };
+
+bool rgb_matrix_indicators_user(void) {
+    rgb_matrix_set_color(func_row_leds[0], 255, 0, 0);
+    rgb_matrix_set_color(func_row_leds[1], 0, 255, 0);
+    for(uint8_t a_led = 2; a_led < sizeof(func_row_leds); ++a_led) {
+        rgb_matrix_set_color(func_row_leds[a_led], 255, 255, 0);
+    }
+
+    return true;
+}
