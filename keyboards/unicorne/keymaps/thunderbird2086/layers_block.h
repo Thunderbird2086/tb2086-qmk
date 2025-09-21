@@ -38,17 +38,23 @@
 
 #define ________________________ADJUST_L1________________________ QK_BOOT , XXXXXXX , KC_PWR  , KC_WAKE , KC_SLEP , XXXXXXX
 
-#if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-#   define ________________________ADJUST_L2________________________ RGBRST  , XXXXXXX , RGB_SPI , RGB_SAI , RGB_HUI , RGB_VAI
-#   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , RGB_SPD , RGB_SAD , RGB_HUD , RGB_VAD
+#if defined(RGB_MATRIX_ENABLE)
+#   define ________________________ADJUST_L2________________________ RGBRST  , XXXXXXX , RM_SPDU , RM_SATU , RM_HUEU , RM_VALU
+#   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , RM_SPDD , RM_SATD , RM_HUED , RM_VALD
+#elif defined(RGBLIGHT_ENABLE)
+#   define ________________________ADJUST_L2________________________ RGBRST  , XXXXXXX , UG_SPDU , UG_SATU , UG_HUEU , UG_VALU
+#   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , UG_SPDD , UG_SATD , UG_HUED , UG_VALD
 #else
 #   define ________________________ADJUST_L2________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #   define ________________________ADJUST_L3________________________ EE_CLR  , VRSN    , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #endif
 
-#if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
-#   define ________________________ADJUST_R1________________________ RGB_TOG , XXXXXXX , XXXXXXX , XXXXXXX , COLEMAK , QWERTY
-#   define ________________________ADJUST_R3________________________ RGB_MOD , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
+#if defined(RGB_MATRIX_ENABLE)
+#   define ________________________ADJUST_R1________________________ RM_TOGG , XXXXXXX , XXXXXXX , XXXXXXX , COLEMAK , QWERTY
+#   define ________________________ADJUST_R3________________________ RM_NEXT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
+#elif defined(RGBLIGHT_ENABLE)
+#   define ________________________ADJUST_R1________________________ UG_TOGG , XXXXXXX , XXXXXXX , XXXXXXX , COLEMAK , QWERTY
+#   define ________________________ADJUST_R3________________________ UG_NEXT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
 #else
 #   define ________________________ADJUST_R1________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , COLEMAK , QWERTY
 #   define ________________________ADJUST_R3________________________ XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX
@@ -68,8 +74,8 @@
 #define _______________NAV_1_________________ KC_LEFT , KC_UP   , KC_RGHT , KC_PGUP
 #define _______________NAV_2_________________ KC_HOME , KC_DOWN , KC_END  , KC_PGDN
 
-#define _______________MOUSE_1_______________ KC_BTN1 , KC_MS_U , KC_BTN2 , KC_WH_D
-#define _______________MOUSE_2_______________ KC_MS_L , KC_MS_D , KC_MS_R , KC_WH_U
+#define _______________MOUSE_1_______________ MS_BTN1 , MS_UP   , MS_BTN2 , MS_WHLD
+#define _______________MOUSE_2_______________ MS_LEFT , MS_DOWN , MS_RGHT , MS_WHLU
 
 #define ____________________MEDIA_1____________________ KC_BRMU , KC_MFFD , KC_MPLY , KC_VOLU , K_BACK
 #define ____________________MEDIA_2____________________ KC_BRMD , KC_MRWD , KC_MUTE , KC_VOLD , K_FWRD

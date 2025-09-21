@@ -84,9 +84,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_MEDIA] = LAYOUT(
       QK_BOOT, EE_CLR,  _______, _______, _______, QWERTY,         COLEMAK, _______, _______, K_LOCK,  EE_CLR,  QK_BOOT,   _______, _______,
-      _______, KC_PWR,  KC_SLEP, KC_WAKE, _______, _______,        _______, RGB_SAI, RGB_VAI, RGB_SPI, RGB_MOD, _______,   _______, _______,
-      _______, KC_BRIU, KC_MPRV, KC_MPLY, KC_VOLU, _______,        _______, RGB_SAD, RGB_VAD, RGB_SPD, RGB_RMOD,_______,            _______,
-      _______, KC_BRID, KC_MNXT, KC_MUTE, KC_VOLD, _______,        _______, RGB_HUD, RGB_HUI, _______, RGB_TOG, _______,   _______, _______,
+      _______, KC_PWR,  KC_SLEP, KC_WAKE, _______, _______,        _______, RM_SATU, RM_VALU, RM_SPDU, RM_NEXT, _______,   _______, _______,
+      _______, KC_BRIU, KC_MPRV, KC_MPLY, KC_VOLU, _______,        _______, RM_SATD, RM_VALD, RM_SPDD, RM_PREV,_______,            _______,
+      _______, KC_BRID, KC_MNXT, KC_MUTE, KC_VOLD, _______,        _______, RM_HUED, RM_HUEU, _______, RM_TOGG, _______,   _______, _______,
       _______, _______, _______, _______,          _______,        _______,                   _______, _______, _______,   _______, _______
   ),
 };
