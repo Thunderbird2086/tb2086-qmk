@@ -49,7 +49,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     "# " QMK_KEYBOARD "/" QMK_KEYMAP "\n" SS_DELAY(VER_NEWLINE_WAIT)
                     "# built on: " QMK_BUILDDATE "\n");
                 break;
-            case RGB_TOG:
+            case RM_TOGG:
                 gpio_toggle_pin(XIAO_RGB_POWER_PIN);
                 break;
         }

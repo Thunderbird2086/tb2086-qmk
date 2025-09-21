@@ -111,9 +111,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               └───┴───┴───┘   └───┴───┴───┘
       */
     [_MEDIA] = LAYOUT_split_3x5_3(
-        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RGB_TOG,   RGB_MOD,   K_LOCK,    EE_CLR,    KC_NO,
-        KC_BRIU,   KC_MPRV,   KC_MPLY,   KC_VOLU,   K_BACK,                               KC_NO,     RGB_VAI,   RGB_HUI,   RGB_SAI,   RGB_SPI,
-        KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               KC_NO,     RGB_VAD,   RGB_HUD,   RGB_SAD,   RGB_SPD,
+        KC_PWR,    KC_SLEP,   KC_WAKE,   KC_NO,     KC_NO,                                RM_TOGG,   RM_NEXT,   K_LOCK,    EE_CLR,    KC_NO,
+        KC_BRIU,   KC_MPRV,   KC_MPLY,   KC_VOLU,   K_BACK,                               KC_NO,     RM_VALU,   RM_HUEU,   RM_SATU,   RM_SPDU,
+        KC_BRID,   KC_MNXT,   KC_MUTE,   KC_VOLD,   K_FWRD,                               KC_NO,     RM_VALD,   RM_HUED,   RM_SATD,   RM_SPDD,
                                          MOU_ESC,   FCT_TAB,   ADJ_SPC,        COD_ENT,   FCT_BSPC,  MED_DEL
     ),
      /*
@@ -129,10 +129,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               └───┴───┴───┘   └───┴───┴───┘
       */
     [_MOUSE] = LAYOUT_split_3x5_3(
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                VRSN,      KC_ACL0,   KC_ACL1,   KC_ACL2,   KC_NO,
-        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_NO,     KC_MS_L,   KC_MS_U,   KC_MS_R,   KC_WH_U,
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     KC_WH_L,   KC_MS_D,   KC_WH_R,   KC_WH_D,
-                                         MOU_ESC,   FCT_TAB,   COD_SPC,        KC_BTN1,   KC_BTN2,   KC_BTN3
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                VRSN,      MS_ACL0,   MS_ACL1,   MS_ACL2,   KC_NO,
+        KC_LOPT,   KC_LSFT,   KC_LCTL,   KC_LCMD,   KC_NO,                                KC_NO,     MS_LEFT,   MS_UP  ,   MS_RGHT,   MS_WHLU,
+        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,                                KC_NO,     MS_WHLL,   MS_DOWN,   MS_WHLR,   MS_WHLD,
+                                         MOU_ESC,   FCT_TAB,   COD_SPC,        MS_BTN1,   MS_BTN2,   MS_BTN3
     ),
      /*
       * ┌───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┐
