@@ -93,9 +93,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_ADJUST] = LAYOUT_top(
-    EE_CLR      , ZOOM_W     , RGB_SAI     , RGB_VAI    , RGB_MOD    ,
-    ______      , ZOOM_M     , RGB_SAD     , RGB_VAD    , RGB_RMOD   ,
-    QK_BOOT     , ______     , RGB_HUD     , RGB_HUI    , RGB_TOG
+    EE_CLR      , ZOOM_W     , RM_SATU     , RM_VALU    , RM_NEXT    ,
+    ______      , ZOOM_M     , RM_SATD     , RM_VALD    , RM_PREV    ,
+    QK_BOOT     , ______     , RM_HUED     , RM_HUEU    , RM_TOGG
     ),
 };
 // clang-format on

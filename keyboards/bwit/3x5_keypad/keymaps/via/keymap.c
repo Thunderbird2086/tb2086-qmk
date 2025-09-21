@@ -80,9 +80,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [2] = LAYOUT_top(
-    EE_CLR      , DF(1)      , RGB_SAI     , RGB_VAI    , RGB_MOD    ,
-    ______      , DF(0)      , RGB_SAD     , RGB_VAD    , RGB_RMOD   ,
-    QK_BOOT     , ______     , RGB_HUD     , RGB_HUI    , RGB_TOG
+    EE_CLR      , DF(1)      , RM_SATU     , RM_VALU    , RM_NEXT    ,
+    ______      , DF(0)      , RM_SATD     , RM_VALD    , RM_PREV    ,
+    QK_BOOT     , ______     , RM_HUED     , RM_HUEU    , RM_TOGG
     ),
 
     [3] = LAYOUT_top(

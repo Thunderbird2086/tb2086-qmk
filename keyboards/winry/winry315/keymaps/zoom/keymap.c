@@ -26,6 +26,7 @@ enum layer_names {
 //  SCMD(KC_T)  | LALT(KC_T)  |  Pause Screen Sharing
 //  SCMD(KC_V)  | LALT(KC_V)  |  Video On/Off
 //  SCMD(KC_W)  |             |  Switch to Speaker/Gallery View
+//  LALT(KC_Y)  | LALT(KC_Y)  |  Raise/Lower hand
 //              | LALT(KC_F1) |  Switch to Speaker View
 //              | LALT(KC_F2) |  Switch to Gallery View
 //
@@ -46,28 +47,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             SCMD(KC_V),          KC_MPLY   ,        LCMD(KC_A),
     KC_ESC      , LCMD(KC_U) , SCMD(KC_W)  , SCMD(KC_D) , KC_ENT     ,
     TT(_ADJUST) , SCMD(KC_H) , SCMD(KC_N)  , SCMD(KC_T) , SCMD(KC_M) ,
-    TT(_RGB___) , SCMD(KC_A) , SCMD(KC_V)  , SCMD(KC_S) , LCMD(KC_W)
+    LALT(KC_Y)  , SCMD(KC_A) , SCMD(KC_V)  , SCMD(KC_S) , LCMD(KC_W)
     ),
 
     [_ZOOM_W] = LAYOUT_top(
             LALT(KC_V),          KC_MPLY,           LALT(KC_A),
     KC_ESC      , LALT(KC_U) , LALT(KC_F1) , LALT(KC_F2), KC_ENT       ,
     TT(_ADJUST) , LALT(KC_H) , LALT(KC_N)  , LALT(KC_T) , C(A(S(KC_H))),
-    TT(_RGB___) , LALT(KC_A) , LALT(KC_V)  , LALT(KC_S) , LALT(KC_F4)
+    LALT(KC_Y)  , LALT(KC_A) , LALT(KC_V)  , LALT(KC_S) , LALT(KC_F4)
     ),
 
     [_RGB___] = LAYOUT_top(
             KC_MSTP,             KC_MPLY,           KC_MUTE,
-    ______      , RGB_M_P    , RGB_M_B     , RGB_M_R    , RGB_MOD     ,
-    TT(_ADJUST) , RGB_M_SW   , RGB_M_SN    , RGB_M_TW   , RGB_RMOD    ,
-    MO(_RGB___) , RGB_M_X    , RGB_M_K     , RGB_M_G    , RGB_M_T
+    ______      , RM_HUEU    , RM_SATU     , RM_VALU    , RM_SPDU     ,
+    ______      , RM_PREV    , RM_TOGG     , RM_NEXT    , ______      ,
+    ______      , RM_HUED    , RM_SATD     , RM_VALD    , RM_SPDD
     ),
 
     [_ADJUST] = LAYOUT_top(
             KC_MSTP,              KC_MPLY,          KC_MUTE,
-    EE_CLR      , ZOOM_W     , RGB_SAI     , RGB_VAI    , RGB_MOD     ,
-    ______      , ZOOM_M     , RGB_SAD     , RGB_VAD    , RGB_RMOD    ,
-    ______      , ______     , RGB_HUD     , RGB_HUI    , RGB_TOG
+    ______      , ZOOM_W     , ______      , ______     , QK_BOOT     ,
+    ______      , ZOOM_M     , ______      , ______     , QK_RBT      ,
+    TT(_RGB___) , ______     , ______      , ______     , EE_CLR 
     ),
 };
 // clang-format on
